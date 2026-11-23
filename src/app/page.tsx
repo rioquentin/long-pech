@@ -1,8 +1,9 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { BOOK_HREF } from "@/components/Chrome";
 import { Photo } from "@/components/Photo";
 import { EventList, NewsletterSection, VisitBlock } from "@/components/Sections";
-import { Swallow } from "@/components/Swallow";
+import { Flight } from "@/components/Motifs";
 import { T } from "@/components/T";
 import { WineBadge, WineCard } from "@/components/Wine";
 import {
@@ -15,6 +16,13 @@ import {
   ui,
   WINE_TYPES,
 } from "@/lib/content";
+import { pageMeta } from "@/lib/seo";
+
+// Titre complet, sans le gabarit « %s · Domaine » du layout.
+export const metadata: Metadata = {
+  ...pageMeta(pages.home.meta, "/"),
+  title: { absolute: pages.home.meta.title },
+};
 
 const NATIVE = ["braucol", "duras", "mauzac", "loin-de-l-oeil"];
 
@@ -41,7 +49,7 @@ export default async function Home() {
         <div className="bg-calcaire relative w-[min(calc(var(--marge)+700px),100%)] py-[clamp(28px,4vw,56px)] pr-[clamp(24px,4vw,56px)] pl-(--marge) max-md:-mt-14 max-md:w-[calc(100%-28px)]">
           <p className="sur">{home.hero.kicker}</p>
           <h1 className="mt-[18px] mb-[22px]">
-            {home.hero.titleStart} <span className="it text-braucol">{home.hero.titleAccent}</span>
+            {home.hero.titleStart} <span className="it text-brique">{home.hero.titleAccent}</span>
           </h1>
           <p className="chapo">{home.hero.body}</p>
           <div className="mt-7 flex flex-wrap items-center gap-x-6 gap-y-3.5">
@@ -65,24 +73,29 @@ export default async function Home() {
               {ui.cta.discover}
             </Link>
           </p>
-          <Photo id="vignes" className="mt-8 aspect-[552/340]" sizes="(min-width: 768px) 40vw, 100vw" />
         </div>
-        <dl className="ap grid grid-cols-3 gap-3.5 self-end sm:gap-6 md:col-span-6 md:col-start-7">
-          {home.figures.map((figure) => (
-            <div key={figure.label} className="border-encre flex flex-col-reverse justify-end border-t pt-4">
-              <dt className="text-encre-2 mt-2.5 text-[0.92rem]">
-                <T>{figure.label}</T>
-              </dt>
-              <dd className="font-display text-[clamp(2.3rem,6.4vw,5.6rem)] leading-none">
-                <T>{figure.value}</T>
-              </dd>
-            </div>
-          ))}
-        </dl>
+        <div className="ap md:col-span-6 md:col-start-7">
+          <Photo id="vignes" className="aspect-[3/2]" sizes="(min-width: 768px) 50vw, 100vw" />
+          <dl className="mt-8 grid grid-cols-3 gap-3.5 sm:gap-6">
+            {home.figures.map((figure) => (
+              <div
+                key={figure.label}
+                className="border-encre flex flex-col-reverse justify-end border-t pt-4"
+              >
+                <dt className="text-encre-2 mt-2.5 text-[0.92rem]">
+                  <T>{figure.label}</T>
+                </dt>
+                <dd className="font-display text-[clamp(2.3rem,5vw,4.6rem)] leading-none">
+                  <T>{figure.value}</T>
+                </dd>
+              </div>
+            ))}
+          </dl>
+        </div>
       </section>
 
       <div className="bandeau">
-        <Swallow className="mx-auto h-14" />
+        <Flight className="text-calcaire mx-auto max-w-[56rem]" />
         <p>{home.band}</p>
       </div>
 
@@ -126,7 +139,7 @@ export default async function Home() {
                 href={`/vins/cepages#${grape.slug}`}
                 className="group grid items-baseline gap-x-8 gap-y-1 py-4 md:grid-cols-[1fr_auto] md:py-5"
               >
-                <span className="group-hover:text-braucol font-display text-[clamp(2.6rem,9vw,7rem)] leading-none transition-colors">
+                <span className="group-hover:text-brique font-display text-[clamp(2.6rem,9vw,7rem)] leading-none transition-colors">
                   {grape.name}
                 </span>
                 <span className="text-encre-2 text-[0.95rem] md:max-w-[26ch] md:text-right">

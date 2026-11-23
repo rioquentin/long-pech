@@ -58,8 +58,8 @@ export const eventSchema = z.object({
   kind: z.string(),
   summary: z.string(),
   /** ISO 8601 avec fuseau, ex. 2027-06-18T19:00:00+02:00. */
-  start: nullable(z.string()),
-  end: nullable(z.string()),
+  start: nullable(z.iso.datetime({ offset: true })),
+  end: nullable(z.iso.datetime({ offset: true })),
   dateNote: nullable(z.string()),
   details: nullable(z.string()),
 });
@@ -76,7 +76,8 @@ export const offerSchema = z.object({
   booking: z.string(),
 });
 
-const daySchema = z.array(z.object({ open: z.string(), close: z.string() }));
+const hhmm = z.string().regex(/^([01]\d|2[0-3]):[0-5]\d$/, "Heure attendue au format HH:MM, ex. 09:00");
+const daySchema = z.array(z.object({ open: hhmm, close: hhmm }));
 
 export const settingsSchema = z.object({
   name: z.string(),
@@ -95,7 +96,7 @@ export const settingsSchema = z.object({
   phones: z.array(z.object({ label: z.string(), display: z.string(), tel: z.string() })),
   email: nullable(z.string()),
   /** Clés 0 (dimanche) à 6 (samedi). Un tableau vide veut dire fermé. */
-  hours: nullable(z.record(z.string(), daySchema)),
+  hours: nullable(z.record(z.string().regex(/^[0-6]$/), daySchema)),
   hoursNote: nullable(z.string()),
   socials: z.array(z.object({ label: z.string(), url: z.string() })),
   legal: z.object({ publisher: z.string(), publicationDirector: z.string(), host: z.string() }),

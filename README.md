@@ -36,7 +36,9 @@ Aucun texte n'est écrit dans les composants. Tout est dans `content/fr/`.
 | `ui.json`       | Les libellés d'interface (boutons, formulaires, vérification d'âge) |
 | `photos.json`   | Les emplacements photo, leur texte alternatif et leur brief         |
 
-Un `{{TODO_CLIENT: …}}` dans un texte s'affiche comme une étiquette jaune. La liste complète des questions est dans `TODO_CLIENT.md`. Avant la mise en ligne, passer `NEXT_PUBLIC_SHOW_TODOS=false` : les étiquettes restantes sont alors masquées ou remplacées par « Information à venir ».
+Un `{{TODO_CLIENT: …}}` dans un texte s'affiche comme une étiquette jaune. La liste complète des questions est dans `TODO_CLIENT.md`. Les étiquettes et les briefs photo sont visibles en développement et sur la démonstration GitHub Pages. Sur un build de production, ils sont masqués d'office (ou remplacés par « Information à venir »), et un événement sans date n'est plus annoncé. `NEXT_PUBLIC_SHOW_TODOS=true` les force, `false` les masque partout.
+
+Les espaces insécables de la typographie française (avant `: ; ! ?`, dans les guillemets) sont ajoutées à la lecture du contenu par `src/lib/typo.ts` : écrire des espaces normales dans les JSON.
 
 ### Modifier une cuvée
 
@@ -103,13 +105,15 @@ Copier `.env.example` vers `.env.local`. Les variables `NEXT_PUBLIC_*` sont lues
 | ---------------------------------------- | ------------------------------------------------------- |
 | `NEXT_PUBLIC_SITE_URL`                   | URL publique : sitemap, canoniques, données structurées |
 | `NEXT_PUBLIC_COMMERCE_ENABLED`           | Affichage des prix                                      |
-| `NEXT_PUBLIC_SHOW_TODOS`                 | Affichage des `{{TODO_CLIENT}}`                         |
+| `NEXT_PUBLIC_SHOW_TODOS`                 | Force ou masque les `{{TODO_CLIENT}}`                   |
 | `RESEND_API_KEY`, `MAIL_FROM`, `MAIL_TO` | Envoi des formulaires par Resend                        |
 | `RESEND_AUDIENCE_ID`                     | Audience Resend de la lettre d'information              |
 | `SANITY_PROJECT_ID`, `SANITY_DATASET`    | Contenu depuis Sanity au lieu des JSON                  |
 | `NEXT_PUBLIC_PLAUSIBLE_DOMAIN`           | Mesure d'audience sans cookie                           |
 
-En production, sans `RESEND_API_KEY` ni `MAIL_TO`, les formulaires répondent par une erreur plutôt que de perdre un message.
+En production, sans `RESEND_API_KEY` ni `MAIL_TO`, les formulaires répondent par une erreur plutôt que de perdre un message. Sur Vercel et Netlify, le build de production échoue si `NEXT_PUBLIC_SITE_URL` manque.
+
+Les formulaires sont limités à 5 envois par quart d'heure et par adresse IP (`src/app/actions.ts`). La limite est tenue en mémoire : c'est un frein, pas une protection complète. La lettre d'information n'a pas de double confirmation : à activer dans Resend avant de communiquer dessus.
 
 ## Brancher Sanity
 
@@ -143,8 +147,10 @@ public/fiches/       fiche technique PDF de chaque cuvée
 Points à connaître :
 
 - **Next.js 16 avec Cache Components.** Pas de `new Date()` dans un composant serveur, pas de `export const dynamic`. La doc embarquée est dans `node_modules/next/dist/docs/`.
-- **Tokens de design** dans `src/app/globals.css` (`@theme`) : calcaire, craie, encre, pierre, braucol, vigne, doré, et une couleur par type de vin. Une seule couleur d'accent par écran.
-- **Polices** auto-hébergées dans `src/fonts/` (licence OFL) : Libre Caslon pour les titres (coupe Display en grand, coupe Text en petit, classe `font-display` ou `font-serif`) et Hanken Grotesk pour le texte.
+- **Direction visuelle « L'Envol »** : tout est décrit dans `DESIGN.md` (palette, polices, motifs, règles). La lire avant toute retouche visuelle.
+- **Tokens de design** dans `src/app/globals.css` (`@theme`). `encre` est le bleu nuit, `brique` l'accent des actions, `braucol` ne sert plus qu'au code des vins rouges.
+- **Polices** auto-hébergées dans `src/fonts/` (licence OFL) : Instrument Serif pour les titres et les accents en italique, Manrope pour le texte.
+- **Motifs** dans `src/components/Motifs.tsx` : ligne de crête (`Ridge`, `RidgeEdge`) et trajectoire d'hirondelle (`Flight`).
 - **Hirondelle** : le motif `src/components/Swallow.tsx` est un dessin d'après l'emblème du domaine, pas le logo. À remplacer par le tracé officiel quand il sera fourni.
 - **Cartes cuvée** : le fond prend 15 % de la couleur du type de vin (`color-mix`), pour les photos comme pour les bouteilles dessinées.
 - **Vérification d'âge** : le contenu reste dans le HTML pour les moteurs de recherche. La réponse est gardée dans le stockage local du navigateur.

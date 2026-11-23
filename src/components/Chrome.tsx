@@ -4,6 +4,8 @@ import { ui, type Settings } from "@/lib/content";
 import { asset, directionsUrl } from "@/lib/site";
 import { EvinNotice } from "./Bits";
 import { MobileMenu } from "./MobileMenu";
+import { RidgeEdge } from "./Motifs";
+import { NavLink } from "./NavLink";
 
 export const BOOK_HREF = "/visites#reserver";
 
@@ -31,18 +33,23 @@ export function Header() {
     <header className="wrap bg-calcaire border-pierre relative z-20 flex items-center justify-between gap-6 border-b py-5">
       <Logo />
       <nav aria-label={ui.navLabel} className="max-lg:hidden">
-        <ul className="flex gap-7 text-[0.95rem]">
+        <ul className="flex gap-4 text-[0.95rem] whitespace-nowrap xl:gap-7">
           {ui.nav.map((item) => (
             <li key={item.href}>
-              <Link href={item.href} className="inline-block py-2 hover:underline hover:underline-offset-8">
+              <NavLink
+                href={item.href}
+                className="inline-block py-2 hover:underline hover:underline-offset-8 aria-[current]:underline aria-[current]:underline-offset-8"
+              >
                 {item.label}
-              </Link>
+              </NavLink>
             </li>
           ))}
         </ul>
       </nav>
-      <Link href={BOOK_HREF} className="btn btn-plein max-xl:hidden">
-        {ui.cta.book}
+      {/* Libellé court entre 1024 et 1279 px, où la navigation prend presque toute la largeur. */}
+      <Link href={BOOK_HREF} className="btn btn-plein whitespace-nowrap max-lg:hidden">
+        <span className="xl:hidden">{ui.cta.bookShort}</span>
+        <span className="max-xl:hidden">{ui.cta.book}</span>
       </Link>
       <MobileMenu items={ui.nav} labels={ui.menu} cta={{ href: BOOK_HREF, label: ui.cta.book }} />
     </header>
@@ -52,44 +59,48 @@ export function Header() {
 export function Footer({ settings }: { settings: Settings }) {
   const { address } = settings;
   return (
-    <footer className="on-dark bg-encre text-calcaire wrap pt-14 pb-10 text-[0.92rem]">
-      <div className="grille">
-        <div className="md:col-span-4">
-          <Logo dark />
-          <p className="mt-4">
-            {settings.owners}
+    <>
+      {/* La colline se dessine par-dessus le bas de la dernière section, quelle que soit sa couleur. */}
+      <RidgeEdge className="text-encre relative -mt-[clamp(28px,5vw,72px)] -mb-px h-[clamp(28px,5vw,72px)]" />
+      <footer className="on-dark bg-encre text-calcaire wrap pt-10 pb-10 text-[0.92rem]">
+        <div className="grille">
+          <div className="md:col-span-4">
+            <Logo dark />
+            <p className="mt-4">
+              {settings.owners}
+              <br />
+              {ui.footer.independent}
+            </p>
+          </div>
+          <address className="not-italic md:col-span-4">
+            {address.street}
             <br />
-            {ui.footer.independent}
-          </p>
-        </div>
-        <address className="not-italic md:col-span-4">
-          {address.street}
-          <br />
-          {address.postalCode} {address.city}
-          <br />
-          {settings.phones.map((phone, i) => (
-            <span key={phone.tel}>
-              {i > 0 && " · "}
-              <a href={`tel:${phone.tel}`} className="inline-block py-1.5 underline underline-offset-4">
-                {phone.display}
-              </a>
-            </span>
-          ))}
-        </address>
-        <nav aria-label={ui.footer.legalNav} className="md:col-span-4">
-          <ul>
-            {ui.footer.legalLinks.map((link) => (
-              <li key={link.href}>
-                <Link href={link.href} className="inline-block py-1.5 underline underline-offset-4">
-                  {link.label}
-                </Link>
-              </li>
+            {address.postalCode} {address.city}
+            <br />
+            {settings.phones.map((phone, i) => (
+              <span key={phone.tel}>
+                {i > 0 && " · "}
+                <a href={`tel:${phone.tel}`} className="inline-block py-1.5 underline underline-offset-4">
+                  {phone.display}
+                </a>
+              </span>
             ))}
-          </ul>
-        </nav>
-      </div>
-      <EvinNotice className="mt-10 border-t border-white/30 pt-6" />
-    </footer>
+          </address>
+          <nav aria-label={ui.footer.legalNav} className="md:col-span-4">
+            <ul>
+              {ui.footer.legalLinks.map((link) => (
+                <li key={link.href}>
+                  <Link href={link.href} className="inline-block py-1.5 underline underline-offset-4">
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        </div>
+        <EvinNotice className="mt-10 border-t border-white/30 pt-6" />
+      </footer>
+    </>
   );
 }
 

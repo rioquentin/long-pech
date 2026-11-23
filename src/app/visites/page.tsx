@@ -21,7 +21,7 @@ export default async function Visites() {
       <section className="section" aria-label={page.kicker}>
         <ul className="grid gap-6 lg:grid-cols-3">
           {offers.map((offer) => (
-            <li key={offer.slug} className="ap bg-craie border-braucol flex flex-col border-t-4 p-6 sm:p-8">
+            <li key={offer.slug} className="ap bg-craie border-brique flex flex-col border-t-4 p-6 sm:p-8">
               <h2 className="text-[2rem]">{offer.title}</h2>
               <p className="chapo mt-3">
                 <T>{offer.summary}</T>

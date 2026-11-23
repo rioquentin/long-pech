@@ -8,6 +8,12 @@ import type { NextConfig } from "next";
 const pages = process.env.GITHUB_PAGES === "true";
 const basePath = pages ? (process.env.PAGES_BASE_PATH ?? "") : "";
 
+// Sans URL publique, le sitemap, les canoniques et les données structurées pointeraient vers localhost.
+const production = process.env.VERCEL_ENV === "production" || process.env.CONTEXT === "production";
+if (production && !process.env.NEXT_PUBLIC_SITE_URL) {
+  throw new Error("NEXT_PUBLIC_SITE_URL est obligatoire pour un déploiement de production (voir README).");
+}
+
 const nextConfig: NextConfig = {
   // Cache Components repose sur le prérendu partiel, incompatible avec l'export statique.
   cacheComponents: !pages,

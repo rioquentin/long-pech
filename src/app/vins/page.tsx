@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Breadcrumb, EvinNotice, PageHeader } from "@/components/Bits";
+import { Flight } from "@/components/Motifs";
 import { T } from "@/components/T";
 import { WineCard } from "@/components/Wine";
 import { WineCatalog } from "@/components/WineCatalog";
@@ -11,7 +12,10 @@ const page = pages.vins;
 export const metadata = pageMeta(page.meta, "/vins");
 
 export default async function Vins() {
-  const wines = await getWines();
+  // Rangées par couleur, dans l'ordre de la légende et des filtres (le tri est stable à l'intérieur d'un type).
+  const wines = [...(await getWines())].sort(
+    (a, b) => WINE_TYPES.indexOf(a.type) - WINE_TYPES.indexOf(b.type),
+  );
   const grapeNames = [...new Set(wines.flatMap((w) => w.grapes.map((g) => g.name)))].sort((a, b) =>
     a.localeCompare(b, "fr"),
   );
@@ -21,12 +25,14 @@ export default async function Vins() {
       <PageHeader kicker={page.kicker} title={page.title} intro={page.intro} />
       <section className="wrap pb-[clamp(64px,10vw,140px)]">
         <h2 className="sur font-sans">{page.rangesTitle}</h2>
-        <ul className="border-encre mt-3 mb-12 grid border-t sm:grid-cols-2 lg:grid-cols-4">
+        {/* Sur mobile : deux colonnes sans le texte long, pour que les bouteilles arrivent vite. */}
+        <Flight dots={[0.012, 0.262, 0.512, 0.762]} className="text-encre mt-6 max-lg:hidden" />
+        <ul className="border-encre mt-3 mb-8 grid grid-cols-2 border-t sm:mb-12 lg:-mt-9 lg:grid-cols-4 lg:border-t-0">
           {page.ranges.map((range) => (
-            <li key={range.key} className="border-pierre border-b py-5 pr-6">
-              <h3>{ui.ranges[range.key as keyof typeof ui.ranges]}</h3>
-              <p className="occ mt-1 text-[1.05rem]">{range.tagline}</p>
-              <p className="text-encre-2 mt-2 text-[0.95rem]">{range.text}</p>
+            <li key={range.key} className="border-pierre border-b py-4 pr-4 sm:py-5 sm:pr-6">
+              <h3 className="max-sm:text-[1.2rem]">{ui.ranges[range.key as keyof typeof ui.ranges]}</h3>
+              <p className="occ mt-1 text-[1.05rem] max-sm:text-[0.95rem]">{range.tagline}</p>
+              <p className="text-encre-2 mt-2 text-[0.95rem] max-sm:hidden">{range.text}</p>
             </li>
           ))}
         </ul>

@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
+import { NavLink } from "./NavLink";
 
 type Props = {
   items: { href: string; label: string }[];
@@ -46,13 +47,13 @@ export function MobileMenu({ items, labels, cta }: Props) {
         <ul>
           {items.map((item) => (
             <li key={item.href} className="border-pierre border-b">
-              <Link
+              <NavLink
                 href={item.href}
-                className="block py-4 font-serif text-[1.6rem]"
+                className="aria-[current]:text-brique block py-4 font-serif text-[1.6rem]"
                 onClick={() => setOpen(false)}
               >
                 {item.label}
-              </Link>
+              </NavLink>
             </li>
           ))}
         </ul>

@@ -12,7 +12,7 @@ export default function NotFound() {
     <div className="grille wrap items-center py-12 sm:py-20">
       <div className="md:col-span-6">
         <p className="sur flex items-center gap-2.5">
-          <Swallow className="text-braucol h-5" />
+          <Swallow className="text-brique h-5" />
           404
         </p>
         <h1 className="mt-4">{page.title}</h1>

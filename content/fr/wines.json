@@ -211,7 +211,8 @@
     "servingTemp": "8 °C",
     "cellaring": "4 à 5 ans",
     "sku": "3760085380172",
-    "techSheetPdf": "/fiches/raphael.pdf"
+    "techSheetPdf": "/fiches/raphael.pdf",
+    "featured": true
   },
   {
     "slug": "la-boussole",
@@ -333,7 +334,7 @@
     "type": "blanc",
     "sweetness": "sec",
     "appellation": "AOP Gaillac",
-    "featured": true,
+    "featured": false,
     "grapes": [
       {
         "name": "Loin-de-l'œil"

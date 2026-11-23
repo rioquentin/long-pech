@@ -23,6 +23,14 @@ test.describe("Vérification d'âge", () => {
     await expect(page.getByRole("dialog")).toBeHidden();
   });
 
+  test("est redemandée après 30 jours, avec le message sanitaire", async ({ page }) => {
+    await page.addInitScript(() => localStorage.setItem("lp-age", String(Date.now() - 31 * 24 * 3600_000)));
+    await page.goto("/");
+    const gate = page.getByRole("dialog");
+    await expect(gate).toBeVisible();
+    await expect(gate).toContainText("L'abus d'alcool est dangereux pour la santé");
+  });
+
   test("refuse l'accès aux mineurs, avec retour possible", async ({ page }) => {
     await page.goto("/");
     await page.getByRole("button", { name: "Non" }).click();

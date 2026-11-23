@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 /** Carte OpenStreetMap, chargée seulement au clic : aucune requête tierce avant. */
 export function MapEmbed({
@@ -11,6 +11,11 @@ export function MapEmbed({
   labels: { load: string; notice: string; title: string };
 }) {
   const [loaded, setLoaded] = useState(false);
+  const frame = useRef<HTMLIFrameElement>(null);
+  // Le bouton disparaît au clic : le focus passe à la carte.
+  useEffect(() => {
+    if (loaded) frame.current?.focus();
+  }, [loaded]);
   const { lat, lng } = geo;
   const bbox = [lng - 0.03, lat - 0.018, lng + 0.03, lat + 0.018].join(",");
   if (!loaded) {
@@ -27,6 +32,7 @@ export function MapEmbed({
   }
   return (
     <iframe
+      ref={frame}
       title={labels.title}
       className="border-pierre aspect-[4/3] w-full border"
       loading="lazy"

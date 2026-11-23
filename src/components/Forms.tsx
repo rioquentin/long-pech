@@ -72,9 +72,21 @@ function Honeypot({ label }: { label: string }) {
     <div className="pot" aria-hidden="true">
       <label>
         {label}
-        <input type="text" name="website" tabIndex={-1} autoComplete="off" />
+        <input type="text" name="lp_ref" tabIndex={-1} autoComplete="off" />
       </label>
     </div>
+  );
+}
+
+/** Mention RGPD sous un formulaire, avec le lien vers la politique de confidentialité. */
+function LegalNote({ text, privacy }: { text: string; privacy: string }) {
+  return (
+    <p className="legal">
+      {text}{" "}
+      <Link href="/confidentialite" className="inline-block py-1 underline underline-offset-4">
+        {privacy}
+      </Link>
+    </p>
   );
 }
 
@@ -125,9 +137,15 @@ function ErrorSummary({
       ref={focusRef}
       tabIndex={-1}
       role="alert"
-      className="border-braucol border-l-4 py-2 pl-4 font-semibold"
+      className="border-brique border-l-4 py-2 pl-4 font-semibold"
     >
-      {state.errors.demo ? labels.demoNotice : state.errors.send ? labels.sendError : labels.errorTitle}
+      {state.errors.demo
+        ? labels.demoNotice
+        : state.errors.rate
+          ? labels.rateError
+          : state.errors.send
+            ? labels.sendError
+            : labels.errorTitle}
     </div>
   );
 }
@@ -169,14 +187,22 @@ export function BookingForm({
           required
         />
       </div>
-      <Field {...field} name="name" label={labels.name} autoComplete="name" required />
+      <Field {...field} name="name" label={labels.name} autoComplete="name" maxLength={120} required />
       <div className="grid gap-5 sm:grid-cols-2">
-        <Field {...field} name="email" label={labels.email} type="email" autoComplete="email" required />
-        <Field {...field} name="phone" label={labels.phone} type="tel" autoComplete="tel" />
+        <Field
+          {...field}
+          name="email"
+          label={labels.email}
+          type="email"
+          autoComplete="email"
+          maxLength={200}
+          required
+        />
+        <Field {...field} name="phone" label={labels.phone} type="tel" autoComplete="tel" maxLength={30} />
       </div>
       <Field {...field} name="message" label={labels.message} as="textarea" hint={labels.messageHint} />
       <Honeypot label={labels.honeypot} />
-      <p className="legal">{labels.bookingLegal}</p>
+      <LegalNote text={labels.bookingLegal} privacy={labels.privacy} />
       <button type="submit" className="btn btn-plein justify-self-start" disabled={pending}>
         {pending ? labels.sending : labels.sendBooking}
       </button>
@@ -194,11 +220,19 @@ export function ContactForm({ labels }: { labels: FormLabels }) {
   return (
     <form action={action} noValidate className="grid gap-5" data-testid="contact-form">
       <ErrorSummary state={state} labels={labels} focusRef={focusRef} />
-      <Field {...field} name="name" label={labels.name} autoComplete="name" required />
-      <Field {...field} name="email" label={labels.email} type="email" autoComplete="email" required />
+      <Field {...field} name="name" label={labels.name} autoComplete="name" maxLength={120} required />
+      <Field
+        {...field}
+        name="email"
+        label={labels.email}
+        type="email"
+        autoComplete="email"
+        maxLength={200}
+        required
+      />
       <Field {...field} name="message" label={labels.message} as="textarea" required />
       <Honeypot label={labels.honeypot} />
-      <p className="legal">{labels.contactLegal}</p>
+      <LegalNote text={labels.contactLegal} privacy={labels.privacy} />
       <button type="submit" className="btn btn-plein justify-self-start" disabled={pending}>
         {pending ? labels.sending : labels.sendContact}
       </button>
@@ -261,7 +295,7 @@ export function NewsletterForm({
       </div>
       <Honeypot label={honeypot} />
       {state.status === "error" && (
-        <p id={`${id}-err`} role="alert" className="text-braucol mt-2 text-[0.88rem] font-semibold">
+        <p id={`${id}-err`} role="alert" className="text-brique mt-2 text-[0.88rem] font-semibold">
           {state.errors.demo ? labels.demo : labels.error}
         </p>
       )}

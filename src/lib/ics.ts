@@ -1,4 +1,5 @@
 import type { Settings, WineEvent } from "./content/schemas";
+import { stripTodos } from "./site";
 
 const stamp = (iso: string) =>
   new Date(iso)
@@ -9,7 +10,7 @@ const esc = (text: string) =>
   text
     .replace(/\\/g, "\\\\")
     .replace(/([,;])/g, "\\$1")
-    .replace(/\n/g, "\\n");
+    .replace(/\r?\n/g, "\\n");
 
 /** Fichier iCalendar (RFC 5545) pour un événement daté. Renvoie null si la date manque. */
 export function buildIcs(event: WineEvent, settings: Settings, siteUrl: string): string | null {
@@ -28,7 +29,7 @@ export function buildIcs(event: WineEvent, settings: Settings, siteUrl: string):
     `DTSTART:${stamp(event.start)}`,
     `DTEND:${stamp(end)}`,
     `SUMMARY:${esc(`${event.title} · ${settings.name}`)}`,
-    `DESCRIPTION:${esc(event.summary)}`,
+    `DESCRIPTION:${esc(stripTodos(event.summary))}`,
     `LOCATION:${esc(`${settings.name}, ${street}, ${postalCode} ${city}`)}`,
     `URL:${siteUrl}/evenements`,
     "END:VEVENT",

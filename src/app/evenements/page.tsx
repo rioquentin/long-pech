@@ -13,7 +13,7 @@ export default async function Evenements() {
       <Breadcrumb items={[{ href: "/evenements", label: page.kicker }]} />
       <PageHeader kicker={page.kicker} title={page.title} intro={page.intro} />
       <section className="wrap pb-[clamp(64px,10vw,140px)]">
-        <EventList events={events} />
+        <EventList events={events} level="h2" />
       </section>
       <NewsletterSection />
       {events.map((event) => {

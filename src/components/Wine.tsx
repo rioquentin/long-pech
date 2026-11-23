@@ -22,7 +22,7 @@ export function Bottle({ type, className }: { type: WineType; className?: string
     <svg viewBox="0 0 60 220" className={className} aria-hidden="true">
       <path
         d="M24 4h12v44c0 12 12 18 12 40v120a6 6 0 0 1-6 6H18a6 6 0 0 1-6-6V88c0-22 12-28 12-40z"
-        fill="#1F1A17"
+        fill="#1D2A3A"
       />
       <rect x="23" y="4" width="14" height="30" fill={c} />
       <rect x="15" y="118" width="30" height="52" fill="#FBF8F1" />
@@ -86,10 +86,11 @@ export function WineCard({ wine, stagger = false }: { wine: Wine; stagger?: bool
         <WineVisual wine={wine} />
       </div>
       <div className="grid gap-2 px-3 pt-4 pb-5 sm:px-[18px]">
-        <WineBadge type={wine.type} />
-        <h3 className="text-[1.25rem] sm:text-[1.5rem]">
+        <p className="sur text-[0.68rem]">{ui.ranges[wine.range]}</p>
+        <h3 className="text-[1.4rem] sm:text-[1.75rem]">
           <Link href={`/vins/${wine.slug}`}>{wine.name}</Link>
         </h3>
+        <WineBadge type={wine.type} />
         <p className="text-encre-2 text-[0.92rem]">
           <T>{wineSubtitle(wine)}</T>
         </p>

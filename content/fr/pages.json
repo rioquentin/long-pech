@@ -301,7 +301,8 @@
           "body": [
             "Domaine de Long-Pech, 582 route de Lapeyrière, 81310 Lisle-sur-Tarn.",
             "EARL Bastide, SIRET 432 313 708 00013. {{TODO_CLIENT: numéro de TVA intracommunautaire}}",
-            "Téléphone : 05 63 33 37 22."
+            "{{TODO_CLIENT: capital social et numéro RCS de l'EARL Bastide}}",
+            "Téléphone : 05 63 33 37 22. E-mail : longpech81@gmail.com."
           ]
         },
         {
@@ -353,7 +354,8 @@
         {
           "title": "Destinataires",
           "body": [
-            "Seul le domaine lit vos messages. Ils transitent par notre prestataire d'envoi d'e-mails, Resend, et par notre hébergeur. Aucune donnée n'est vendue ni cédée."
+            "Seul le domaine lit vos messages. Ils transitent par notre prestataire d'envoi d'e-mails, Resend, et par notre hébergeur, puis arrivent dans la boîte de réception du domaine, hébergée par Google (Gmail). Aucune donnée n'est vendue ni cédée.",
+            "Resend et Google sont des sociétés américaines : vos messages peuvent être traités hors de l'Union européenne. Ce transfert est encadré par les clauses contractuelles types de la Commission européenne."
           ]
         },
         {

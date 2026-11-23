@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { pages, ui, type Offer, type Settings, type WineEvent } from "@/lib/content";
 import { showTodos } from "@/lib/flags";
-import { asset, directionsUrl } from "@/lib/site";
+import { asset, directionsUrl, staticExport } from "@/lib/site";
 import { BOOK_HREF, fullAddress } from "./Chrome";
 import { NewsletterForm } from "./Forms";
 import { OpenStatus } from "./OpenStatus";
@@ -80,7 +80,8 @@ const dateFormat = new Intl.DateTimeFormat("fr-FR", {
   timeZone: "Europe/Paris",
 });
 
-export function EventList({ events }: { events: WineEvent[] }) {
+/** `level` : niveau du titre de chaque événement, selon le titre qui précède la liste. */
+export function EventList({ events, level: Title = "h3" }: { events: WineEvent[]; level?: "h2" | "h3" }) {
   if (events.length === 0) return <p className="font-serif text-[1.5rem]">{ui.event.empty}</p>;
   return (
     <ul>
@@ -98,7 +99,7 @@ export function EventList({ events }: { events: WineEvent[] }) {
           </p>
           <div>
             <p className="sur">{event.kind}</p>
-            <h3 className="mt-1 mb-1">{event.title}</h3>
+            <Title className="mt-1 mb-1 font-serif text-[1.5rem] leading-[1.15]">{event.title}</Title>
             <p className="text-encre-2 text-[0.95rem]">
               <T>{event.summary}</T>
             </p>
@@ -108,12 +109,12 @@ export function EventList({ events }: { events: WineEvent[] }) {
               </p>
             )}
           </div>
-          {event.start ? (
+          {!event.start ? (
+            <p className="legal max-w-[22ch] self-start">{ui.event.icsPending}</p>
+          ) : staticExport ? null : (
             <a href={asset(`/evenements/${event.slug}/calendrier.ics`)} className="lien self-start" download>
               {ui.event.ics}
             </a>
-          ) : (
-            <p className="legal max-w-[22ch] self-start">{ui.event.icsPending}</p>
           )}
         </li>
       ))}
@@ -182,16 +183,16 @@ export function HillDiagram() {
           stroke="#3F4F36"
           strokeWidth="10"
         />
-        <g stroke="#1F1A17" strokeWidth="1" opacity=".35">
+        <g stroke="#1D2A3A" strokeWidth="1" opacity=".35">
           <path d="M150 300h500M210 280h380M270 255h260M320 225h160" />
         </g>
-        <rect x="383" y="78" width="34" height="22" fill="#1F1A17" />
-        <path d="M378 80l22-16 22 16z" fill="#7A1F2B" />
+        <rect x="383" y="78" width="34" height="22" fill="#1D2A3A" />
+        <path d="M378 80l22-16 22 16z" fill="#A3432C" />
         <path d="M690 296q22-10 44 0t44 0" fill="none" stroke="#8AA3A8" strokeWidth="5" />
         {dots.map(([x, y], i) => (
           <g key={i}>
-            <circle cx={x} cy={y - 34} r="15" fill="#FBF8F1" stroke="#1F1A17" />
-            <text x={x} y={y - 28} textAnchor="middle" fontSize="16" fontWeight="600" fill="#1F1A17">
+            <circle cx={x} cy={y - 34} r="15" fill="#FBF8F1" stroke="#1D2A3A" />
+            <text x={x} y={y - 28} textAnchor="middle" fontSize="16" fontWeight="600" fill="#1D2A3A">
               {i + 1}
             </text>
           </g>

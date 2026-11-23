@@ -25,6 +25,8 @@ jobs:
           node-version: 22
           cache: pnpm
       - run: pnpm install --frozen-lockfile
+      # Rien n'est publié si le code ne passe pas ESLint, TypeScript et Prettier.
+      - run: pnpm check
       - id: pages
         uses: actions/configure-pages@v5
       - run: ./scripts/build-pages.sh

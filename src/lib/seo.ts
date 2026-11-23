@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import settingsJson from "../../content/fr/settings.json";
 import type { Settings, Wine, WineEvent } from "./content/schemas";
 import { siteUrl, stripTodos } from "./site";
 
@@ -7,7 +8,15 @@ export function pageMeta(meta: { title: string; description: string }, path: str
     title: meta.title,
     description: stripTodos(meta.description),
     alternates: { canonical: path },
-    openGraph: { title: meta.title, description: stripTodos(meta.description), url: path },
+    // Next remplace l'objet openGraph du layout au lieu de le fusionner : on répète type, langue et nom du site.
+    openGraph: {
+      type: "website",
+      locale: "fr_FR",
+      siteName: settingsJson.name,
+      title: meta.title,
+      description: stripTodos(meta.description),
+      url: path,
+    },
   };
 }
 
@@ -57,6 +66,7 @@ export function productLd(wine: Wine, commerce: boolean) {
     url: `${siteUrl}/vins/${wine.slug}`,
     brand: { "@type": "Brand", name: "Domaine de Long-Pech" },
     ...(wine.story ? { description: stripTodos(wine.story) } : {}),
+    ...(wine.images[0] ? { image: `${siteUrl}${wine.images[0].src}` } : {}),
     ...(wine.sku ? { sku: wine.sku } : {}),
     additionalProperty: [
       ...(wine.appellation

@@ -104,7 +104,7 @@ export function WineCatalog({
             ))}
           </div>
         </fieldset>
-        <div className="grid gap-5 sm:grid-cols-3">
+        <div className="grid grid-cols-2 gap-x-3 gap-y-4 sm:grid-cols-3 sm:gap-5 max-sm:[&>*:last-child]:col-span-2">
           {select("appellation", labels.appellation, appellations, labels.allF)}
           {select("sweetness", labels.sweetness, sweetness, labels.allF)}
           {select("grape", labels.grape, grapes, labels.all)}

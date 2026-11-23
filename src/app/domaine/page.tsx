@@ -21,14 +21,15 @@ export default function Domaine() {
         <h2 id="histoire" className="ap md:col-span-4">
           {page.history.title}
         </h2>
-        <ol className="md:col-span-7 md:col-start-6">
+        {/* Frise : la trajectoire de l'hirondelle descend les générations, une étape par date. */}
+        <ol className="frise md:col-span-7 md:col-start-6">
           {page.history.timeline.map((step) => (
             <li
               key={step.text}
-              className="ap border-encre grid gap-1 border-t py-5 last:border-b sm:grid-cols-[13rem_1fr] sm:gap-8"
+              className="ap border-pierre grid gap-1 border-t py-5 first:border-t-0 sm:grid-cols-[11rem_1fr] sm:gap-8"
             >
               <span
-                className={`text-braucol font-display leading-none ${/^\d/.test(step.year) ? "text-[clamp(2.2rem,5vw,4rem)]" : "text-[2rem]"}`}
+                className={`text-brique font-display leading-none ${/^\d/.test(step.year) ? "text-[clamp(2.2rem,5vw,4rem)]" : "text-[2rem]"}`}
               >
                 <T>{step.year}</T>
               </span>
@@ -46,7 +47,7 @@ export default function Domaine() {
         </div>
         <ul className="grid gap-6 sm:grid-cols-2 md:col-span-6 md:col-start-7">
           {page.sisters.people.map((person) => (
-            <li key={person.name} className="ap border-braucol border-t-4 pt-4">
+            <li key={person.name} className="ap border-brique border-t-4 pt-4">
               <h3>{person.name}</h3>
               <p className="mt-2">
                 <T>{person.text}</T>

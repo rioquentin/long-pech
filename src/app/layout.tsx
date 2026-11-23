@@ -5,35 +5,28 @@ import { JsonLd } from "@/components/Bits";
 import { Footer, Header, MobileBar } from "@/components/Chrome";
 import { getSettings, ui } from "@/lib/content";
 import { wineryLd } from "@/lib/seo";
-import { AGE_KEY, defaultLocale, noindex, siteUrl } from "@/lib/site";
+import { AGE_KEY, AGE_TTL, defaultLocale, noindex, siteUrl } from "@/lib/site";
 import "./globals.css";
 
-// Polices auto-hébergées (licence OFL, voir src/fonts). Deux familles : Libre Caslon
-// (coupe Display pour les grands titres, coupe Text pour les petits corps) et Hanken Grotesk.
+// Polices auto-hébergées (licence OFL, voir src/fonts) : Instrument Serif pour les titres
+// et les accents en italique, Manrope pour le texte, l'interface et les fiches.
 const titre = localFont({
-  src: "../fonts/libre-caslon-display-latin-400-normal.woff2",
+  src: "../fonts/instrument-serif-latin-400-normal.woff2",
   weight: "400",
   variable: "--font-titre",
   display: "swap",
 });
 const titreItalique = localFont({
-  src: "../fonts/libre-caslon-text-latin-400-italic.woff2",
+  src: "../fonts/instrument-serif-latin-400-italic.woff2",
   weight: "400",
   style: "italic",
   variable: "--font-titre-i",
   display: "swap",
 });
-const texteSerif = localFont({
-  src: "../fonts/libre-caslon-text-latin-400-normal.woff2",
-  weight: "400",
-  variable: "--font-texte-serif",
-  display: "swap",
-  preload: false,
-});
-const hanken = localFont({
-  src: "../fonts/hanken-grotesk-latin-wght-normal.woff2",
-  weight: "100 900",
-  variable: "--font-hanken",
+const texte = localFont({
+  src: "../fonts/manrope-latin-wght-normal.woff2",
+  weight: "200 800",
+  variable: "--font-texte",
   display: "swap",
 });
 
@@ -55,7 +48,7 @@ export async function generateMetadata(): Promise<Metadata> {
 export const viewport: Viewport = { themeColor: "#F3EEE3" };
 
 // Exécuté avant l'hydratation : évite d'afficher la vérification d'âge à qui a déjà répondu.
-const ageScript = `(function(){var d=document.documentElement;d.classList.add("js");try{if(localStorage.getItem("${AGE_KEY}")==="ok")d.dataset.age="ok"}catch(e){}})()`;
+const ageScript = `(function(){var d=document.documentElement;d.classList.add("js");try{var t=Number(localStorage.getItem("${AGE_KEY}"));if(t>0&&Date.now()-t<${AGE_TTL})d.dataset.age="ok"}catch(e){}})()`;
 
 const plausibleDomain = process.env.NEXT_PUBLIC_PLAUSIBLE_DOMAIN;
 
@@ -64,7 +57,7 @@ export default async function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang={defaultLocale}
-      className={`${titre.variable} ${titreItalique.variable} ${texteSerif.variable} ${hanken.variable}`}
+      className={`${titre.variable} ${titreItalique.variable} ${texte.variable}`}
       suppressHydrationWarning
     >
       <head>
@@ -86,11 +79,13 @@ export default async function RootLayout({ children }: LayoutProps<"/">) {
             {ui.skip}
           </a>
           <Header />
-          <main id="contenu">{children}</main>
+          <main id="contenu" tabIndex={-1}>
+            {children}
+          </main>
           <Footer settings={settings} />
           <MobileBar settings={settings} />
         </div>
-        <AgeGate labels={ui.ageGate} />
+        <AgeGate labels={{ ...ui.ageGate, evin: ui.evin }} />
         <JsonLd data={wineryLd(settings)} />
       </body>
     </html>

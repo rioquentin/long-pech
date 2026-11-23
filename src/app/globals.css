@@ -1,15 +1,20 @@
 @import "tailwindcss";
 
-/* Design tokens. Chaque couleur a un rôle : ne pas en ajouter sans le documenter dans le README. */
+/*
+ * Design tokens, direction « L'Envol » (voir DESIGN.md).
+ * La palette vient du plumage de l'hirondelle rustique : dos bleu nuit, gorge brique, ventre crème.
+ * Chaque couleur a un rôle : ne pas en ajouter sans le documenter dans DESIGN.md.
+ */
 @theme {
-  --color-calcaire: #f3eee3; /* fond de page */
+  --color-calcaire: #f3eee3; /* ventre crème : fond de page */
   --color-craie: #fbf8f1; /* surfaces, sections alternées */
-  --color-encre: #1f1a17; /* texte, filets forts */
-  --color-encre-2: #5a5048; /* texte secondaire */
+  --color-encre: #1d2a3a; /* dos bleu nuit : texte, titres, pied de page (12,6:1 sur calcaire) */
+  --color-encre-2: #4a5566; /* texte secondaire (6,5:1) */
   --color-pierre: #d8cfbd; /* filets */
-  --color-braucol: #7a1f2b; /* accent : appel à l'action principal */
-  --color-vigne: #3f4f36; /* secondaire : venir au domaine, terroir */
-  --color-dore: #b8862b; /* réservé aux vins doux */
+  --color-brique: #a3432c; /* gorge brique : boutons, liens d'action, erreurs (5,3:1 ; blanc dessus 6,2:1) */
+  --color-braucol: #7a1f2b; /* rouge braucol : code des vins rouges uniquement */
+  --color-vigne: #3f4f36; /* vert coteau : venir au domaine, HVE (7,6:1) */
+  --color-dore: #b8862b; /* ambre de brume : aplats des vins doux, jamais en texte (2,8:1) */
 
   /* Code couleur par type de vin (pastilles et liserés, jamais en couleur de texte) */
   --color-t-rouge: #7a1f2b;
@@ -22,9 +27,9 @@
 }
 
 @theme inline {
-  --font-serif: var(--font-texte-serif), Georgia, "Times New Roman", serif;
+  --font-serif: var(--font-titre), Georgia, "Times New Roman", serif;
   --font-display: var(--font-titre), Georgia, "Times New Roman", serif;
-  --font-sans: var(--font-hanken), system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-sans: var(--font-texte), system-ui, -apple-system, "Segoe UI", sans-serif;
 }
 
 :root {
@@ -44,28 +49,25 @@
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
   }
+  /* Instrument Serif : serif fin et aérien, une seule graisse. Les titres gagnent en taille ce qu'ils perdent en épaisseur. */
   h1,
   h2,
   h3 {
-    font-family: var(--font-serif);
+    font-family: var(--font-display);
     font-weight: 400;
-    line-height: 1.05;
-    letter-spacing: -0.015em;
+    line-height: 1;
+    letter-spacing: -0.005em;
     text-wrap: balance;
   }
-  h1,
-  h2 {
-    font-family: var(--font-display);
-  }
   h1 {
-    font-size: clamp(2.5rem, 6.4vw, 5.2rem);
+    font-size: clamp(2.9rem, 7.4vw, 6.2rem);
   }
   h2 {
-    font-size: clamp(2rem, 4.6vw, 3.6rem);
+    font-size: clamp(2.25rem, 5.2vw, 4.2rem);
   }
   h3 {
-    font-size: 1.5rem;
-    line-height: 1.15;
+    font-size: 1.65rem;
+    line-height: 1.1;
   }
   :focus-visible {
     outline: 3px solid var(--color-encre);
@@ -114,7 +116,7 @@
     font-style: italic;
   }
   .occ {
-    font-size: 1.25rem;
+    font-size: 1.35rem;
     color: var(--color-vigne);
   }
 
@@ -137,8 +139,8 @@
     color: var(--color-calcaire);
   }
   .btn-plein {
-    background: var(--color-braucol);
-    border-color: var(--color-braucol);
+    background: var(--color-brique);
+    border-color: var(--color-brique);
     color: #fff;
   }
   .btn-plein:hover {
@@ -201,7 +203,7 @@
     height: 11px;
     border-radius: 50%;
     background: var(--c);
-    box-shadow: 0 0 0 1px rgb(31 26 23 / 0.35);
+    box-shadow: 0 0 0 1px rgb(29 42 58 / 0.35);
     flex: none;
   }
 
@@ -252,9 +254,12 @@
     text-transform: uppercase;
   }
 
+  /* Bandeau « ciel du soir » : bleu nuit, une hirondelle suit sa trajectoire. */
   .bandeau {
-    background: var(--color-braucol);
-    color: #fff;
+    position: relative;
+    overflow: hidden;
+    background: var(--color-encre);
+    color: var(--color-calcaire);
     padding: clamp(56px, 9vw, 120px) var(--marge);
     text-align: center;
   }
@@ -266,6 +271,45 @@
     max-width: 22ch;
     margin: 1.2rem auto 0;
     text-wrap: balance;
+  }
+
+  /* Frise des générations : trajectoire pointillée à gauche, un point par date, l'hirondelle en tête. */
+  .frise {
+    position: relative;
+    padding-left: 2.25rem;
+  }
+  .frise::before {
+    content: "";
+    position: absolute;
+    left: 7px;
+    top: 2.2rem;
+    bottom: 1.5rem;
+    border-left: 2px dotted color-mix(in srgb, var(--color-encre) 55%, transparent);
+  }
+  .frise::after {
+    content: "";
+    position: absolute;
+    left: -9px;
+    top: -0.6rem;
+    width: 34px;
+    height: 30px;
+    background: var(--color-encre);
+    mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-6 -14 112 108'%3E%3Cpath transform='rotate(-62 50 40)' d='M96 33C90 28 82 27 74 29 66 16 54 6 38 2 48 10 56 22 58 34 48 35 38 36 30 37L2 24C12 32 18 38 22 41 16 46 8 52 0 58L30 45C40 46 48 46 55 45 54 58 50 68 42 79 58 70 68 56 72 43 82 42 90 39 96 33Z'/%3E%3C/svg%3E")
+      center / contain no-repeat;
+  }
+  .frise > li {
+    position: relative;
+  }
+  .frise > li::before {
+    content: "";
+    position: absolute;
+    left: calc(-2.25rem + 3px);
+    top: calc(1.25rem + 0.9rem);
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--color-brique);
+    box-shadow: 0 0 0 4px var(--color-calcaire);
   }
 
   /* Emplacement photo */
@@ -315,11 +359,11 @@
     color: inherit;
   }
   .champ [aria-invalid="true"] {
-    border-color: var(--color-braucol);
+    border-color: var(--color-brique);
     border-width: 2px;
   }
   .champ .err {
-    color: var(--color-braucol);
+    color: var(--color-brique);
     font-size: 0.88rem;
     font-weight: 600;
     margin-top: 6px;
@@ -366,7 +410,7 @@
       border-right: 1px solid var(--color-pierre);
     }
     .barre a:last-child {
-      background: var(--color-braucol);
+      background: var(--color-brique);
       color: #fff;
       border: 0;
     }

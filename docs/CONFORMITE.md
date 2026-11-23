@@ -59,13 +59,16 @@ Cette relecture est la mienne, pas un avis juridique.
 
 | Paire                         | Ratio | Seuil AA |
 | ----------------------------- | ----- | -------- |
-| Encre sur calcaire            | 14,9  | 4,5      |
-| Texte secondaire sur calcaire | 6,8   | 4,5      |
-| Texte secondaire sur craie    | 7,4   | 4,5      |
-| Braucol sur calcaire          | 8,8   | 4,5      |
-| Blanc sur braucol (bouton)    | 10,2  | 4,5      |
+| Bleu nuit sur calcaire        | 12,6  | 4,5      |
+| Texte secondaire sur calcaire | 6,5   | 4,5      |
+| Texte secondaire sur craie    | 7,1   | 4,5      |
+| Brique sur calcaire           | 5,3   | 4,5      |
+| Blanc sur brique (bouton)     | 6,2   | 4,5      |
+| Calcaire sur bleu nuit        | 12,6  | 4,5      |
 | Calcaire sur vigne            | 7,6   | 4,5      |
-| Texte atténué sur vigne       | 6,2   | 4,5      |
+| Texte atténué sur vigne       | 6,7   | 4,5      |
+
+Recalculés le 23 novembre 2026 pour la direction « L'Envol » (voir `DESIGN.md`). L'ambre des vins doux (2,8:1) ne sert jamais de couleur de texte.
 
 - [ ] **Pastilles de type de vin sous 3:1** sur fond clair (rosé 2,6, blanc 2,1, effervescent 2,5). Elles sont cerclées d'un filet sombre et toujours doublées d'un libellé, donc l'information ne passe jamais par la couleur seule. À foncer si un audit RGAA l'exige.
 - [ ] Pas de test avec un lecteur d'écran (VoiceOver, NVDA). À faire avant la mise en ligne.
@@ -94,7 +97,7 @@ Budgets :
 - [x] Accessibilité, bonnes pratiques, SEO : 100, pour un objectif de 95.
 - [x] CLS : 0, pour un objectif inférieur à 0,05.
 - [ ] **Performance : 94 à 96**, pour un objectif de 95. Atteint sur sept pages, manqué d'un point sur l'accueil.
-- [ ] **LCP : 2,8 à 3,1 s en 4G lente simulée**, pour un objectif de 2 s. Le LCP observé en local est de 0,1 s. L'écart vient surtout des polices (87 ko préchargés depuis le passage à Libre Caslon, contre 135 ko avant) et de l'image du logo.
+- [ ] **LCP : 2,8 à 3,1 s en 4G lente simulée**, pour un objectif de 2 s. Le LCP observé en local est de 0,1 s. L'écart vient surtout des polices (68 ko au total depuis le passage à Instrument Serif et Manrope, contre 87 ko avec Libre Caslon ; mesure à refaire) et de l'image du logo.
 - [ ] **JavaScript de l'accueil : 183 ko gzip**, pour un objectif de 120 ko. Environ 160 ko viennent du socle Next.js 16 et React 19, le code du site pèse une quinzaine de ko. Le budget n'est pas atteignable avec cette pile sans renoncer à l'App Router.
 - [ ] Mesures à refaire en ligne (CDN, HTTP/2 ou 3) et avec les vraies photos, qui changeront le LCP.
 

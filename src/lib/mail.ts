@@ -17,25 +17,37 @@ export async function sendMail(mail: { subject: string; text: string; replyTo?: 
     console.info(`[mail simulé] ${mail.subject}\n${mail.text}`);
     return true;
   }
-  const res = await fetch("https://api.resend.com/emails", {
-    method: "POST",
-    headers: { Authorization: `Bearer ${key}`, "Content-Type": "application/json" },
-    body: JSON.stringify({ from, to, subject: mail.subject, text: mail.text, reply_to: mail.replyTo }),
+  return post("https://api.resend.com/emails", {
+    from,
+    to,
+    subject: mail.subject,
+    text: mail.text,
+    reply_to: mail.replyTo,
   });
-  if (!res.ok) console.error(`[mail] Resend ${res.status}`);
-  return res.ok;
+}
+
+/** Appel à Resend. Une panne réseau ou un délai dépassé renvoie false : le formulaire affiche l'erreur d'envoi. */
+async function post(url: string, body: unknown): Promise<boolean> {
+  try {
+    const res = await fetch(url, {
+      method: "POST",
+      headers: { Authorization: `Bearer ${key}`, "Content-Type": "application/json" },
+      body: JSON.stringify(body),
+      signal: AbortSignal.timeout(8000),
+    });
+    if (!res.ok) console.error(`[mail] Resend ${res.status}`);
+    return res.ok;
+  } catch (error) {
+    console.error("[mail] Resend injoignable", error);
+    return false;
+  }
 }
 
 /** Inscription à la lettre : audience Resend si configurée, sinon simple e-mail au domaine. */
 export async function subscribe(email: string): Promise<boolean> {
   const audience = process.env.RESEND_AUDIENCE_ID;
   if (key && audience) {
-    const res = await fetch(`https://api.resend.com/audiences/${audience}/contacts`, {
-      method: "POST",
-      headers: { Authorization: `Bearer ${key}`, "Content-Type": "application/json" },
-      body: JSON.stringify({ email, unsubscribed: false }),
-    });
-    return res.ok;
+    return post(`https://api.resend.com/audiences/${audience}/contacts`, { email, unsubscribed: false });
   }
   return sendMail({ subject: "Nouvelle inscription à la lettre", text: email, replyTo: email });
 }

@@ -66,7 +66,7 @@ export function PageHeader({ kicker, title, intro }: { kicker: string; title: st
     <header className="wrap grille pt-10 pb-12 sm:pt-16 sm:pb-20">
       <div className="lg:col-span-9">
         <p className="sur flex items-center gap-2.5">
-          <Swallow className="text-braucol h-5" />
+          <Swallow className="text-brique h-5" />
           {kicker}
         </p>
         <h1 className="mt-4">{title}</h1>

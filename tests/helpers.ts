@@ -4,7 +4,7 @@ import type { Page } from "@playwright/test";
 export const adult = (page: Page) =>
   page.addInitScript(() => {
     try {
-      localStorage.setItem("lp-age", "ok");
+      localStorage.setItem("lp-age", String(Date.now()));
     } catch {}
   });
 

@@ -21,7 +21,7 @@ await mkdir("docs/captures", { recursive: true });
 const browser = await chromium.launch();
 for (const [device, viewport] of Object.entries(viewports)) {
   const context = await browser.newContext({ viewport, reducedMotion: "reduce", locale: "fr-FR" });
-  await context.addInitScript(() => localStorage.setItem("lp-age", "ok"));
+  await context.addInitScript(() => localStorage.setItem("lp-age", String(Date.now())));
   const page = await context.newPage();
   for (const [name, path] of routes) {
     await page.goto(base + path, { waitUntil: "networkidle" });

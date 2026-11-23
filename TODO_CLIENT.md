@@ -26,6 +26,14 @@ Millésimes, degrés, sucres résiduels, âge des vignes, vinifications, élevag
 
 ## Le domaine
 
+**Incohérences trouvées en ligne (dossier de direction visuelle, 23 novembre 2026).** Le futur site doit devenir la source de vérité, puis les fiches tierces seront corrigées.
+
+- Date de fondation : « 1889 » (Tourisme Occitanie), « années 1930 » (Hachette, et le site actuel : 1930, Victor Maurel), « 1963 » (un profil LinkedIn au nom de Sandra Bastide, qui parle aussi de 28 ha en bio et d'une reprise en 2023 : homonymie ou erreur ?).
+- La sœur : « Karine » (Tripadvisor, brief) ou « Marine » (Hachette).
+- Trois noms de domaine circulent : long-pech.com, long-pech.fr et domaine-de-long-pech.com (adresse contact@ sur Fermes locales). Lequel garder, et lesquels rediriger ?
+- Tarifs de groupe publiés par l'annuaire des Vins de Gaillac : 6 € par personne (1 h) et 10 € par personne (2 h, avec produits du terroir). Toujours valables ? Le site ne les affiche pas tant qu'ils ne sont pas confirmés.
+- Tourisme Occitanie évoque le goût de Sandra pour l'art et la musique, et un projet d'œnotourisme autour. À raconter ?
+
 11. Année où Marius a repris le domaine.
 12. Surface du vignoble (12, 18 ou 30 ha selon les sources). Non affichée.
 13. Prénoms et rôles des membres de l'équipe. Les fiches disent que Sandra assure la vigne, la vinification, la vente et l'accueil : y a-t-il une équipe à présenter ?
@@ -33,6 +41,14 @@ Millésimes, degrés, sucres résiduels, âge des vignes, vinifications, élevag
 15. Exposition de chaque versant et cépages plantés, pour le schéma de la colline.
 16. Logo : celui de l'ancien site est repris (image de 312 px). Fournir le fichier vectoriel.
 17. Signification des deux hirondelles du logo, que l'ancien site reliait aux deux sœurs.
+
+## Direction visuelle « L'Envol » (adoptée le 23 novembre 2026)
+
+- Logo : fournir le fichier vectoriel de l'hirondelle. Le dossier prévoit trois versions (pictogramme pour le favicon et la capsule, hirondelle en vol pour l'en-tête, trajectoire seule).
+- Signature manuscrite de Sandra, numérisée, réservée à la gamme Les Signatures.
+- Miss Pink : le dossier propose une cinquième gamme « Hors-piste » pour cette cuvée à part. À valider avant de l'afficher.
+- Campagne photo en quatre saisons, à commencer au retour des hirondelles (fin mars, avril) : voir `PHOTO_BRIEF.md` et `DESIGN.md`.
+- Scans de matière (calcaire, argile du domaine) pour la texture de fond, si on en fait un jour.
 
 ## Les vins
 
@@ -66,3 +82,6 @@ Millésimes, degrés, sucres résiduels, âge des vignes, vinifications, élevag
 39. Adhésions affichées sur l'ancien site : Bienvenue à la ferme, Saveurs du Tarn. Toujours d'actualité ?
 40. Portrait de deux femmes en chapeau (ancien site) : peut-on l'utiliser ?
 41. Conditions générales de vente : à rédiger avant l'ouverture de la boutique.
+42. Capital social et numéro RCS de l'EARL Bastide, pour les mentions légales.
+43. Politique de confidentialité : faire valider le paragraphe sur le transfert de données hors Union européenne (Resend pour l'envoi, Gmail pour la réception).
+44. Distances : le site annonce « environ 40 km » pour Toulouse, Albi et Montauban à la fois. À vérifier une par une.
