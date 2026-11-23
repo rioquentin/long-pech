@@ -1,0 +1,22 @@
+[
+  {
+    "slug": "apero-vigneron",
+    "title": "Apéro vigneron",
+    "kind": "Au domaine",
+    "summary": "Une soirée sur la colline, avec la vue sur les vignes au coucher du soleil.",
+    "start": null,
+    "end": null,
+    "dateNote": "{{TODO_CLIENT: date et horaires du prochain apéro vigneron}}",
+    "details": "{{TODO_CLIENT: programme, tarif, réservation}}"
+  },
+  {
+    "slug": "soiree-au-domaine",
+    "title": "Soirée au domaine",
+    "kind": "Au domaine",
+    "summary": "{{TODO_CLIENT: description de la prochaine soirée}}",
+    "start": null,
+    "end": null,
+    "dateNote": "{{TODO_CLIENT: date et horaires}}",
+    "details": "{{TODO_CLIENT: programme, tarif, réservation}}"
+  }
+]

@@ -1,0 +1,425 @@
+@import "tailwindcss";
+
+/* Design tokens. Chaque couleur a un rôle : ne pas en ajouter sans le documenter dans le README. */
+@theme {
+  --color-calcaire: #f3eee3; /* fond de page */
+  --color-craie: #fbf8f1; /* surfaces, sections alternées */
+  --color-encre: #1f1a17; /* texte, filets forts */
+  --color-encre-2: #5a5048; /* texte secondaire */
+  --color-pierre: #d8cfbd; /* filets */
+  --color-braucol: #7a1f2b; /* accent : appel à l'action principal */
+  --color-vigne: #3f4f36; /* secondaire : venir au domaine, terroir */
+  --color-dore: #b8862b; /* réservé aux vins doux */
+
+  /* Code couleur par type de vin (pastilles et liserés, jamais en couleur de texte) */
+  --color-t-rouge: #7a1f2b;
+  --color-t-rose: #d4877a;
+  --color-t-blanc: #b5b067;
+  --color-t-doux: #b8862b;
+  --color-t-effervescent: #8aa3a8;
+
+  --breakpoint-xs: 30rem;
+}
+
+@theme inline {
+  --font-serif: var(--font-texte-serif), Georgia, "Times New Roman", serif;
+  --font-display: var(--font-titre), Georgia, "Times New Roman", serif;
+  --font-sans: var(--font-hanken), system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+:root {
+  --marge: max(clamp(20px, 5vw, 72px), calc((100vw - 1360px) / 2));
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+  }
+  body {
+    background: var(--color-calcaire);
+    color: var(--color-encre);
+    font-family: var(--font-sans);
+    font-size: 1.0625rem;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-serif);
+    font-weight: 400;
+    line-height: 1.05;
+    letter-spacing: -0.015em;
+    text-wrap: balance;
+  }
+  h1,
+  h2 {
+    font-family: var(--font-display);
+  }
+  h1 {
+    font-size: clamp(2.5rem, 6.4vw, 5.2rem);
+  }
+  h2 {
+    font-size: clamp(2rem, 4.6vw, 3.6rem);
+  }
+  h3 {
+    font-size: 1.5rem;
+    line-height: 1.15;
+  }
+  :focus-visible {
+    outline: 3px solid var(--color-encre);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+  .on-dark :focus-visible {
+    outline-color: var(--color-calcaire);
+  }
+  [inert] {
+    user-select: none;
+  }
+}
+
+@layer components {
+  .wrap {
+    padding-inline: var(--marge);
+  }
+  .section {
+    padding: clamp(64px, 10vw, 140px) var(--marge);
+  }
+  .grille {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    gap: clamp(20px, 3vw, 48px);
+  }
+  .grille > * {
+    grid-column: 1 / -1;
+  }
+  .sur {
+    font: 600 0.75rem/1.2 var(--font-sans);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--color-encre-2);
+  }
+  .on-dark .sur {
+    color: #d5dbc8;
+  }
+  .chapo {
+    color: var(--color-encre-2);
+    max-width: 52ch;
+  }
+  .it,
+  .occ {
+    font-family: var(--font-titre-i), var(--font-serif);
+    font-style: italic;
+  }
+  .occ {
+    font-size: 1.25rem;
+    color: var(--color-vigne);
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    min-height: 48px;
+    padding: 0 22px;
+    font: 600 0.95rem var(--font-sans);
+    border: 1px solid var(--color-encre);
+    transition:
+      background-color 0.2s,
+      color 0.2s;
+    cursor: pointer;
+  }
+  .btn:hover {
+    background: var(--color-encre);
+    color: var(--color-calcaire);
+  }
+  .btn-plein {
+    background: var(--color-braucol);
+    border-color: var(--color-braucol);
+    color: #fff;
+  }
+  .btn-plein:hover {
+    background: var(--color-encre);
+    border-color: var(--color-encre);
+  }
+  .btn[aria-disabled="true"],
+  .btn:disabled {
+    opacity: 0.6;
+    cursor: progress;
+  }
+  .on-dark .btn {
+    border-color: var(--color-calcaire);
+  }
+  .on-dark .btn:hover {
+    background: var(--color-calcaire);
+    color: var(--color-vigne);
+  }
+  .on-dark .btn-clair {
+    background: var(--color-calcaire);
+    color: var(--color-vigne);
+  }
+  .lien {
+    display: inline-block;
+    padding-block: 4px;
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 5px;
+    text-decoration-thickness: 1px;
+  }
+  .lien:hover {
+    text-decoration-thickness: 2px;
+  }
+
+  .todo {
+    display: inline-block;
+    font:
+      500 0.72rem/1.35 ui-monospace,
+      Menlo,
+      monospace;
+    background: #fff6c9;
+    border: 1px dashed #8a6d00;
+    color: #4d3d00;
+    padding: 3px 6px;
+    letter-spacing: 0;
+    text-transform: none;
+    overflow-wrap: anywhere;
+    vertical-align: middle;
+  }
+
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font: 500 0.88rem var(--font-sans);
+  }
+  .badge::before {
+    content: "";
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    background: var(--c);
+    box-shadow: 0 0 0 1px rgb(31 26 23 / 0.35);
+    flex: none;
+  }
+
+  /* Carte cuvée */
+  .carte {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background: var(--color-calcaire);
+    border-top: 4px solid var(--c);
+  }
+  .carte-vis {
+    position: relative;
+    aspect-ratio: 4 / 5;
+    overflow: hidden;
+    /* Fond teinté à la couleur du type de vin : même traitement pour les photos et les dessins. */
+    background: color-mix(in srgb, var(--c) 15%, var(--color-craie));
+  }
+  /* Positionnement absolu : le visuel ne peut pas agrandir la carte au-delà de son ratio. */
+  .carte-vis > svg,
+  .carte-vis > img {
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    transition: transform 0.5s;
+  }
+  .carte-vis > svg {
+    height: 70%;
+    width: auto;
+  }
+  .carte-vis > img {
+    width: 100%;
+    height: 86%;
+    object-fit: contain;
+  }
+  .carte:hover .carte-vis > svg,
+  .carte:hover .carte-vis > img {
+    transform: translateY(-6px);
+  }
+  .carte h3 a::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+  }
+  .dispo {
+    font: 600 0.78rem var(--font-sans);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .bandeau {
+    background: var(--color-braucol);
+    color: #fff;
+    padding: clamp(56px, 9vw, 120px) var(--marge);
+    text-align: center;
+  }
+  .bandeau p {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 5.2vw, 4.2rem);
+    line-height: 1.08;
+    letter-spacing: -0.01em;
+    max-width: 22ch;
+    margin: 1.2rem auto 0;
+    text-wrap: balance;
+  }
+
+  /* Emplacement photo */
+  .photo {
+    position: relative;
+    overflow: hidden;
+    background: #e6ddc8;
+  }
+  .photo > svg,
+  .photo > img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .photo-brief {
+    position: absolute;
+    right: 12px;
+    top: 12px;
+    max-width: min(260px, calc(100% - 24px));
+    font: 500 0.72rem/1.45 var(--font-sans);
+    color: var(--color-encre);
+    background: rgb(251 248 241 / 0.88);
+    border: 1px dashed var(--color-encre-2);
+    padding: 8px 10px;
+  }
+
+  /* Champs de formulaire */
+  .champ label,
+  .champ legend {
+    display: block;
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 6px;
+  }
+  .champ input,
+  .champ select,
+  .champ textarea {
+    width: 100%;
+    min-height: 52px;
+    padding: 12px 14px;
+    font: inherit;
+    background: var(--color-craie);
+    border: 1px solid var(--color-encre);
+    border-radius: 0;
+    color: inherit;
+  }
+  .champ [aria-invalid="true"] {
+    border-color: var(--color-braucol);
+    border-width: 2px;
+  }
+  .champ .err {
+    color: var(--color-braucol);
+    font-size: 0.88rem;
+    font-weight: 600;
+    margin-top: 6px;
+  }
+  .champ .aide {
+    font-size: 0.85rem;
+    color: var(--color-encre-2);
+    margin-top: 6px;
+  }
+  .pot {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+  }
+  .legal {
+    font-size: 0.8rem;
+    color: var(--color-encre-2);
+  }
+
+  /* Barre d'action mobile */
+  .barre {
+    display: none;
+  }
+  @media (max-width: 760px) {
+    body {
+      padding-bottom: 60px;
+    }
+    .barre {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1.2fr;
+      position: fixed;
+      inset: auto 0 0 0;
+      z-index: 30;
+      background: var(--color-craie);
+      border-top: 1px solid var(--color-encre);
+    }
+    .barre a {
+      display: grid;
+      place-items: center;
+      min-height: 60px;
+      font: 600 0.9rem var(--font-sans);
+      border-right: 1px solid var(--color-pierre);
+    }
+    .barre a:last-child {
+      background: var(--color-braucol);
+      color: #fff;
+      border: 0;
+    }
+  }
+
+  /* Vérification d'âge : visible seulement avec JS et sans réponse mémorisée (voir layout.tsx) */
+  .age-gate {
+    display: none;
+  }
+  html.js:not([data-age="ok"]) .age-gate {
+    display: grid;
+  }
+  html.js:not([data-age="ok"]) body {
+    overflow: hidden;
+  }
+}
+
+/* Animations discrètes. Sans JS : apparition au scroll pilotée par CSS quand le navigateur le permet. */
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: view()) {
+    .ap {
+      animation: apparition linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 35%;
+    }
+  }
+  .page-in {
+    animation: page-in 0.35s ease both;
+  }
+}
+@keyframes apparition {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes page-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  * {
+    transition: none !important;
+  }
+}

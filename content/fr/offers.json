@@ -1,0 +1,43 @@
+[
+  {
+    "slug": "degustation",
+    "kind": "individuel",
+    "title": "Dégustation au caveau",
+    "summary": "Sandra ou un membre de l'équipe vous présente la gamme, du blanc perlé au rouge élevé en fût.",
+    "includes": [
+      "Présentation du domaine et de la colline",
+      "Dégustation commentée de la gamme",
+      "Vente à la propriété"
+    ],
+    "groupSize": "Particuliers et petits groupes",
+    "duration": "{{TODO_CLIENT: durée d'une dégustation}}",
+    "price": "{{TODO_CLIENT: tarif ou gratuité de la dégustation}}",
+    "booking": "{{TODO_CLIENT: avec ou sans rendez-vous}}"
+  },
+  {
+    "slug": "pass-vigneron",
+    "kind": "pass",
+    "title": "Pass Vigneron",
+    "summary": "La visite complète, de la vigne au chai, puis la dégustation.",
+    "includes": ["Visite du domaine", "Dégustation", "Une bouteille offerte"],
+    "groupSize": "{{TODO_CLIENT: nombre de personnes pour le Pass Vigneron}}",
+    "duration": "{{TODO_CLIENT: durée du Pass Vigneron}}",
+    "price": "{{TODO_CLIENT: tarif du Pass Vigneron}}",
+    "booking": "Sur réservation"
+  },
+  {
+    "slug": "groupes",
+    "kind": "groupe",
+    "title": "Visite de groupe",
+    "summary": "Pour les associations, les entreprises et les familles nombreuses.",
+    "includes": [
+      "Visite du domaine",
+      "Dégustation commentée",
+      "{{TODO_CLIENT: autres prestations pour les groupes}}"
+    ],
+    "groupSize": "De 6 à 20 personnes",
+    "duration": "{{TODO_CLIENT: durée de la visite de groupe}}",
+    "price": "{{TODO_CLIENT: tarif par personne pour les groupes}}",
+    "booking": "Sur réservation"
+  }
+]

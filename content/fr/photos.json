@@ -1,0 +1,52 @@
+{
+  "hero": {
+    "alt": "Panorama des coteaux de Long-Pech depuis la crête",
+    "brief": "Panorama depuis la crête, plein ouest. Rangs de vigne au premier plan, vallée du Tarn au fond. Heure dorée, 24 mm, horizon au tiers haut. Aucune personne."
+  },
+  "sandra": {
+    "alt": "Sandra Bastide au travail dans un rang de vigne",
+    "brief": "Sandra au travail dans un rang, de trois quarts, sans pose. Lumière du matin, 50 mm, plan taille. Aucun verre à la main."
+  },
+  "equipe": {
+    "alt": "L'équipe du domaine devant le chai",
+    "brief": "L'équipe au complet devant le chai, en tenue de travail, regard vers l'objectif ou en discussion. Lumière douce de fin d'après-midi, 35 mm. Aucun verre à la main."
+  },
+  "chai": {
+    "alt": "Le chai du domaine, une ancienne bergerie",
+    "brief": "Façade de l'ancienne bergerie devenue chai, de face. Lumière rasante de fin de journée, 35 mm. Nids d'hirondelles visibles si la saison s'y prête."
+  },
+  "sol": {
+    "alt": "Sol argilo-calcaire entre deux rangs de vigne",
+    "brief": "Gros plan sur la terre argilo-calcaire, cailloux blancs visibles, pied de vigne en amorce. Midi voilé, 85 mm, vue plongeante."
+  },
+  "mains": {
+    "alt": "Mains qui taillent un sarment au sécateur",
+    "brief": "Mains et sécateur sur un cep, en hiver. Lumière froide du matin, 85 mm, fond flou sur le coteau."
+  },
+  "barriques": {
+    "alt": "Barriques alignées dans le chai",
+    "brief": "Alignement de fûts dans le chai, en enfilade. Lumière naturelle par la porte, 35 mm, sans flash."
+  },
+  "vendange": {
+    "alt": "Caissettes de raisin blanc au bord d'un rang",
+    "brief": "Caissettes de raisin blanc doré au bord d'un rang, mains qui déposent une grappe. Octobre, lumière chaude d'après-midi, 50 mm."
+  },
+  "caveau": {
+    "alt": "Le caveau du domaine, bouteilles alignées sur le comptoir",
+    "brief": "Comptoir du caveau, bouteilles de la gamme alignées, porte ouverte sur les vignes. Fin de matinée, 28 mm. Verres vides admis, personne en train de boire."
+  },
+  "chemin": {
+    "alt": "Chemin de terre entre deux parcelles de vigne",
+    "brief": "Chemin de terre qui se perd entre deux parcelles. Brume du matin, 50 mm, cadrage vertical."
+  },
+  "vignes": {
+    "alt": "Rangs de vigne du domaine, avec un champ de tournesols et les coteaux au loin",
+    "brief": "Photo de l'ancien site, en basse définition (552 px). À refaire : rangs de vigne en enfilade, coteaux au fond, été, 35 mm.",
+    "src": "/photos/vignes.jpg"
+  },
+  "verres": {
+    "alt": "Quatre verres de vin blanc, rosé et rouge posés sur un muret devant les vignes, une main près d'un verre",
+    "brief": "Photo de l'ancien site, en basse définition (552 px). À refaire : verres posés, vignes en arrière-plan, personne en train de boire.",
+    "src": "/photos/verres.jpg"
+  }
+}

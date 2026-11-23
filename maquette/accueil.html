@@ -1,0 +1,396 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Maquette accueil — Domaine de Long-Pech</title>
+<!-- MAQUETTE : polices chargées via Bunny Fonts pour la validation uniquement.
+     En production : next/font/local, fichiers auto-hébergés, font-display: swap. -->
+<link rel="stylesheet" href="https://fonts.bunny.net/css?family=fraunces:400,400i,500|hanken-grotesk:400,500,600">
+<style>
+:root{
+  /* Rôles */
+  --calcaire:#F3EEE3;      /* fond */
+  --craie:#FBF8F1;         /* surface claire (cartes) */
+  --encre:#1F1A17;         /* texte */
+  --encre-2:#5A5048;       /* texte secondaire (7,1:1 sur calcaire) */
+  --pierre:#D8CFBD;        /* filets */
+  --braucol:#7A1F2B;       /* accent */
+  --vigne:#3F4F36;         /* secondaire */
+  --dore:#B8862B;          /* réservé aux vins doux (aplat) */
+  /* Types de vin : aplat / texte */
+  --t-rouge:#7A1F2B;
+  --t-rose:#D4877A;
+  --t-blanc:#B5B067;
+  --t-doux:#B8862B;
+  --t-effervescent:#8AA3A8;
+  --serif:"Fraunces",Georgia,"Times New Roman",serif;
+  --sans:"Hanken Grotesk",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --marge:max(clamp(20px,5vw,72px),calc((100vw - 1360px)/2));
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--calcaire);color:var(--encre);font:400 17px/1.6 var(--sans);-webkit-font-smoothing:antialiased;padding-bottom:0}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--encre);outline-offset:3px;border-radius:2px}
+h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.05;margin:0;letter-spacing:-.015em;font-variation-settings:"opsz" 144}
+h2{font-size:clamp(2rem,4.6vw,3.6rem)}
+p{margin:0}
+.sur{font:600 .75rem/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--encre-2)}
+.skip{position:absolute;left:-999px}.skip:focus{left:12px;top:12px;background:var(--encre);color:var(--calcaire);padding:10px 14px;z-index:99}
+
+/* En-tête */
+.top{position:absolute;inset:0 0 auto 0;z-index:5;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:22px var(--marge)}
+.logo{text-decoration:none;font-family:var(--serif);font-size:1.5rem;line-height:1;letter-spacing:-.01em}
+.logo small{display:block;font:600 .62rem/1 var(--sans);letter-spacing:.2em;text-transform:uppercase;margin-bottom:5px}
+.top nav ul{display:flex;gap:28px;list-style:none;margin:0;padding:0;font-size:.95rem}
+.top nav a{text-decoration:none;padding:6px 0;border-bottom:1px solid transparent}
+.top nav a:hover{border-color:currentColor}
+@media(max-width:1020px){.top nav{display:none}}
+.menu{display:none;min-height:44px;font:600 .8rem var(--sans);letter-spacing:.12em;text-transform:uppercase;background:none;border:1px solid var(--encre);padding:10px 14px;color:inherit}
+@media(max-width:1020px){.menu{display:block}}
+
+.btn{display:inline-flex;align-items:center;gap:10px;min-height:48px;padding:0 22px;font:600 .95rem var(--sans);text-decoration:none;border:1px solid var(--encre);transition:background .2s,color .2s}
+.btn:hover{background:var(--encre);color:var(--calcaire)}
+.btn--plein{background:var(--braucol);border-color:var(--braucol);color:#fff}
+.btn--plein:hover{background:var(--encre);border-color:var(--encre)}
+.lien{display:inline-block;padding-block:4px;font-weight:600;text-underline-offset:5px;text-decoration-thickness:1px}
+
+/* Hero */
+.hero{position:relative;min-height:min(100svh,900px);display:grid;align-items:end;padding-top:96px}
+.hero svg{position:absolute;inset:0;width:100%;height:100%}
+.brief{position:absolute;right:var(--marge);top:96px;max-width:260px;font:500 .72rem/1.45 var(--sans);color:var(--encre);background:rgba(251,248,241,.85);border:1px dashed var(--encre-2);padding:8px 10px}
+.hero__txt{position:relative;background:var(--calcaire);width:min(calc(var(--marge) + 700px),100%);padding:clamp(28px,4vw,56px) clamp(24px,4vw,56px) clamp(28px,4vw,48px) var(--marge)}
+.hero h1{font-size:clamp(2.5rem,6.4vw,5.2rem);margin:18px 0 22px}
+.hero h1 em{font-style:italic;color:var(--braucol)}
+.hero p{max-width:52ch;color:var(--encre-2)}
+.hero .actions{display:flex;flex-wrap:wrap;gap:14px 24px;align-items:center;margin-top:28px}
+@media(max-width:700px){.brief{display:none}.hero{display:block;min-height:0;padding-top:0}.hero svg{position:static;display:block;height:52svh}.hero__txt{margin-top:-56px;width:calc(100% - 28px)}}
+
+section{padding:clamp(64px,10vw,140px) var(--marge)}
+.grille{display:grid;grid-template-columns:repeat(12,1fr);gap:clamp(20px,3vw,48px)}
+
+/* Pech + chiffres */
+.pech{grid-column:1/6}
+.pech p{margin-top:20px;max-width:40ch}
+.pech .occ{font-family:var(--serif);font-style:italic;font-size:1.25rem;color:var(--vigne)}
+.chiffres{grid-column:7/13;display:grid;grid-template-columns:repeat(3,1fr);gap:24px;align-self:end;margin:0}
+.chiffres div{border-top:1px solid var(--encre);padding-top:16px}
+.chiffres dt{font-family:var(--serif);font-size:clamp(2.4rem,5vw,4.2rem);line-height:1;font-variation-settings:"opsz" 144}
+.chiffres dd{margin:10px 0 0;font-size:.92rem;color:var(--encre-2)}
+.todo{display:inline-block;font:500 .72rem/1.35 ui-monospace,Menlo,monospace;background:#fff6c9;border:1px dashed #8a6d00;color:#4d3d00;padding:3px 6px;letter-spacing:0;text-transform:none}
+.todo{overflow-wrap:anywhere}
+@media(max-width:860px){.pech,.chiffres{grid-column:1/-1}}
+@media(max-width:480px){.chiffres{gap:14px}.chiffres dt{font-size:2.1rem}}
+
+/* Cuvées */
+.cuvees{background:var(--craie);border-block:1px solid var(--pierre)}
+.tete{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:clamp(32px,5vw,64px)}
+.tete p{max-width:44ch;color:var(--encre-2);margin-top:14px}
+.types{display:flex;flex-wrap:wrap;gap:8px 18px;list-style:none;padding:0;margin:0 0 36px;font-size:.88rem}
+.badge{display:inline-flex;align-items:center;gap:8px;font-weight:500}
+.badge::before{content:"";width:11px;height:11px;border-radius:50%;background:var(--c);box-shadow:0 0 0 1px rgba(31,26,23,.35)}
+.cartes{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(16px,2vw,28px);list-style:none;margin:0;padding:0}
+.carte{position:relative;display:flex;flex-direction:column;background:var(--calcaire);border-top:4px solid var(--c)}
+.carte:nth-child(even){margin-top:48px}
+.carte__vis{aspect-ratio:3/4;display:grid;place-items:center;background:linear-gradient(180deg,rgba(31,26,23,.04),transparent)}
+.carte__vis svg{height:78%;transition:transform .5s}
+.carte:hover .carte__vis svg{transform:translateY(-6px)}
+.carte__txt{padding:18px 18px 22px;display:grid;gap:8px}
+.carte h3{font-size:1.55rem}
+.carte h3 a{text-decoration:none}
+.carte h3 a::after{content:"";position:absolute;inset:0}
+.carte p{font-size:.92rem;color:var(--encre-2)}
+.dispo{font:600 .78rem var(--sans);letter-spacing:.06em;text-transform:uppercase;margin-top:6px}
+@media(max-width:980px){.cartes{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:480px){.carte:nth-child(even){margin-top:24px}.carte h3{font-size:1.25rem}.carte__txt{padding:14px 12px 18px}}
+
+/* Cépages */
+.cepages h2{grid-column:1/8}
+.cepages .intro{grid-column:9/13;align-self:end;color:var(--encre-2)}
+.cepages ol{grid-column:1/-1;list-style:none;margin:24px 0 0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--encre)}
+.cepages li{padding:22px 20px 26px 0;border-bottom:1px solid var(--pierre)}
+.cepages li b{display:block;font:400 1.7rem/1.1 var(--serif)}
+.cepages li span{font-size:.9rem;color:var(--encre-2)}
+@media(max-width:860px){.cepages h2,.cepages .intro{grid-column:1/-1}.cepages ol{grid-template-columns:repeat(2,1fr)}}
+
+/* Venir */
+.venir{background:var(--vigne);color:var(--calcaire)}
+.venir .sur{color:#D5DBC8}
+.venir .titre{grid-column:1/7}
+.venir .bloc{grid-column:8/13;grid-row:span 2}
+.venir .boutons{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.venir .boutons .btn{margin:0}
+.venir .offres{grid-column:1/7;display:grid;gap:0;margin-top:8px;list-style:none;padding:0}
+.venir .offres li{padding:18px 0;border-top:1px solid rgba(243,238,227,.35)}
+.venir .offres b{font:400 1.35rem var(--serif);display:block}
+.venir .offres span{font-size:.94rem;color:#E4E0D2}
+.etat{display:inline-flex;flex-wrap:wrap;align-items:center;gap:10px;font-weight:600;border:1px solid currentColor;padding:8px 14px;margin-bottom:22px}
+.etat i{width:9px;height:9px;border-radius:50%;background:currentColor}
+.venir address{font-style:normal;font-size:1.05rem;line-height:1.7}
+.venir .tel{display:block;font:400 clamp(1.6rem,3vw,2.2rem)/1.3 var(--serif);text-decoration:none}
+.venir .tel:hover{text-decoration:underline}
+.venir .btn{border-color:var(--calcaire);margin-top:26px}
+.venir .btn:hover{background:var(--calcaire);color:var(--vigne)}
+.venir .btn--clair{background:var(--calcaire);color:var(--vigne);margin-right:10px}
+@media(max-width:860px){.venir .titre,.venir .bloc,.venir .offres{grid-column:1/-1}.venir .bloc{grid-row:auto}}
+
+/* Agenda */
+.agenda .titre{grid-column:1/5}
+.agenda ul{grid-column:6/13;list-style:none;margin:0;padding:0}
+.agenda li{display:grid;grid-template-columns:110px 1fr auto;gap:20px;align-items:baseline;padding:22px 0;border-top:1px solid var(--encre)}
+.agenda li:last-child{border-bottom:1px solid var(--encre)}
+.agenda time{font:400 1.5rem var(--serif)}
+.agenda h3{font-size:1.4rem;margin-bottom:4px}
+.agenda p{font-size:.92rem;color:var(--encre-2)}
+@media(max-width:860px){.agenda .titre,.agenda ul{grid-column:1/-1}.agenda li{grid-template-columns:1fr;gap:8px}}
+
+/* Lettre */
+.lettre{background:var(--craie);border-top:1px solid var(--pierre)}
+.lettre .g{grid-column:1/7}.lettre form{grid-column:8/13;align-self:end}
+.lettre p{margin-top:16px;color:var(--encre-2);max-width:44ch}
+label{display:block;font-weight:600;font-size:.9rem;margin-bottom:8px}
+.champ{display:flex;gap:0}
+input[type=email]{flex:1;min-width:0;height:52px;padding:0 14px;font:inherit;background:var(--calcaire);border:1px solid var(--encre);border-right:0;color:inherit}
+.champ button{height:52px;padding:0 22px;font:600 .95rem var(--sans);background:var(--encre);color:var(--calcaire);border:1px solid var(--encre);cursor:pointer}
+.legal{font-size:.8rem;margin-top:12px;color:var(--encre-2)}
+.pot{position:absolute;left:-9999px}
+@media(max-width:860px){.lettre .g,.lettre form{grid-column:1/-1}}
+
+footer{background:var(--encre);color:var(--calcaire);padding:56px var(--marge) 40px;font-size:.92rem}
+footer .grille>div{grid-column:span 4}
+footer ul{list-style:none;padding:0;margin:0}
+footer li a,footer address a,.legal a{display:inline-block;padding-block:5px}
+.evin{margin-top:40px;padding-top:22px;border-top:1px solid rgba(243,238,227,.3);font-weight:600}
+@media(max-width:860px){footer .grille>div{grid-column:1/-1}}
+
+/* Barre mobile */
+.barre{display:none}
+@media(max-width:760px){
+  body{padding-bottom:64px}
+  .barre{display:grid;grid-template-columns:1fr 1fr 1.2fr;position:fixed;inset:auto 0 0 0;z-index:20;background:var(--craie);border-top:1px solid var(--encre)}
+  .barre a{display:grid;place-items:center;min-height:60px;font:600 .9rem var(--sans);text-decoration:none;border-right:1px solid var(--pierre)}
+  .barre a:last-child{background:var(--braucol);color:#fff;border:0}
+}
+
+/* Apparition au scroll */
+@media(prefers-reduced-motion:no-preference){
+  .js .ap{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
+  .js .ap.vu{opacity:1;transform:none}
+}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<a class="skip" href="#contenu">Aller au contenu</a>
+
+<header class="top">
+  <a class="logo" href="#"><small>Domaine de</small>Long-Pech</a>
+  <nav aria-label="Navigation principale">
+    <ul>
+      <li><a href="#">Le domaine</a></li>
+      <li><a href="#">Nos vins</a></li>
+      <li><a href="#">Visites &amp; dégustations</a></li>
+      <li><a href="#">Événements</a></li>
+      <li><a href="#">Contact &amp; accès</a></li>
+    </ul>
+  </nav>
+  <button class="menu" type="button" aria-expanded="false">Menu</button>
+</header>
+
+<main id="contenu">
+
+<!-- HERO -->
+<div class="hero">
+  <!-- Placeholder illustré : sera remplacé par la photo 01 (next/image, priority) -->
+  <svg viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Emplacement photo : panorama des coteaux de Long-Pech depuis la crête">
+    <defs><linearGradient id="ciel" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E6DDC8"/><stop offset="1" stop-color="#F3EEE3"/></linearGradient></defs>
+    <rect width="1600" height="900" fill="url(#ciel)"/>
+    <path d="M0 430 Q260 380 520 410 T1040 380 T1600 400 V900 H0Z" fill="#C3C7AE"/>
+    <path d="M0 500 Q340 420 700 470 T1600 440 V900 H0Z" fill="#8E9A72"/>
+    <path d="M0 620 Q420 470 900 520 Q1280 560 1600 500 V900 H0Z" fill="#3F4F36"/>
+    <g fill="none" stroke="#6F8059" stroke-width="2" opacity=".8">
+      <path d="M-40 700 Q420 520 900 570 Q1280 610 1640 550"/><path d="M-40 760 Q420 580 900 630 Q1280 670 1640 610"/>
+      <path d="M-40 830 Q420 650 900 700 Q1280 740 1640 680"/><path d="M-40 910 Q420 730 900 780 Q1280 820 1640 760"/>
+    </g>
+    <circle cx="1260" cy="250" r="54" fill="#F7F1E2"/>
+  </svg>
+  <p class="brief">PHOTO 01 — Panorama depuis la crête, plein ouest. Rangs de vigne au premier plan, vallée du Tarn au fond. Heure dorée, grand angle 24 mm, horizon au tiers haut. Aucune personne.</p>
+
+  <div class="hero__txt">
+    <p class="sur">Lisle-sur-Tarn · Vignoble de Gaillac</p>
+    <h1>Deux sœurs, une longue colline, <em>tous les gaillacs.</em></h1>
+    <p>Sandra et Karine Bastide cultivent des coteaux argilo-calcaires, rive droite du Tarn. Rouge, rosé, blanc sec, doux, effervescent&nbsp;: toute la gamme se découvre à la propriété.</p>
+    <div class="actions">
+      <a class="btn btn--plein" href="#">Réserver une visite</a>
+      <a class="lien" href="#cuvees">Voir les cuvées</a>
+    </div>
+  </div>
+</div>
+
+<!-- PECH + CHIFFRES -->
+<section class="grille">
+  <div class="pech ap">
+    <p class="occ">Pech, en occitan&nbsp;: la colline.</p>
+    <h2 style="margin-top:14px">Toutes les parcelles sont en coteaux.</h2>
+    <p>Le domaine tient sur une longue colline d'argile et de calcaire, près de la forêt de Sivens. De la crête, le regard fait le tour complet.</p>
+    <p style="margin-top:22px"><a class="lien" href="#">Découvrir le domaine</a></p>
+  </div>
+  <dl class="chiffres ap">
+    <div><dt>360°</dt><dd>de panorama depuis la crête</dd></div>
+    <div><dt><span class="todo">{{TODO_CLIENT: surface en ha}}</span></dt><dd>de vignes, toutes en coteaux</dd></div>
+    <div><dt><span class="todo">{{TODO_CLIENT: nb de générations}}</span></dt><dd>générations sur la même colline</dd></div>
+  </dl>
+</section>
+
+<!-- CUVÉES -->
+<section class="cuvees" id="cuvees">
+  <div class="tete">
+    <div>
+      <p class="sur">Nos vins</p>
+      <h2 style="margin-top:14px">Cinq styles, un seul lieu.</h2>
+      <p>AOP Gaillac et IGP Côtes du Tarn. Chaque couleur ci-dessous se retrouve sur les fiches et dans les filtres.</p>
+    </div>
+    <a class="btn" href="#">Toutes les cuvées</a>
+  </div>
+  <ul class="types" aria-label="Types de vin">
+    <li class="badge" style="--c:var(--t-rouge)">Rouge</li>
+    <li class="badge" style="--c:var(--t-rose)">Rosé</li>
+    <li class="badge" style="--c:var(--t-blanc)">Blanc sec</li>
+    <li class="badge" style="--c:var(--t-doux)">Doux &amp; moelleux</li>
+    <li class="badge" style="--c:var(--t-effervescent)">Effervescent</li>
+  </ul>
+
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="b" viewBox="0 0 60 220">
+      <path d="M24 4h12v44c0 12 12 18 12 40v120a6 6 0 0 1-6 6H18a6 6 0 0 1-6-6V88c0-22 12-28 12-40z" fill="#1F1A17"/>
+      <rect x="23" y="4" width="14" height="30" fill="var(--c)"/>
+      <rect x="15" y="118" width="30" height="52" fill="#FBF8F1"/>
+      <rect x="15" y="118" width="30" height="5" fill="var(--c)"/>
+    </symbol>
+  </svg>
+
+  <ul class="cartes">
+    <li class="carte ap" style="--c:var(--t-rouge)">
+      <div class="carte__vis"><svg viewBox="0 0 60 220" aria-hidden="true"><use href="#b"/></svg></div>
+      <div class="carte__txt">
+        <span class="badge">Rouge</span>
+        <h3><a href="#">Jean-Gabriel</a></h3>
+        <p>Élevé en fût de chêne. <span class="todo">{{TODO_CLIENT: cépages, millésime}}</span></p>
+        <p class="dispo">Disponible au domaine</p>
+      </div>
+    </li>
+    <li class="carte ap" style="--c:var(--t-blanc)">
+      <div class="carte__vis"><svg viewBox="0 0 60 220" aria-hidden="true"><use href="#b"/></svg></div>
+      <div class="carte__txt">
+        <span class="badge">Blanc</span>
+        <h3><a href="#">L'Envol des Hirondelles</a></h3>
+        <p>Sauvignon. IGP Côtes du Tarn.</p>
+        <p class="dispo">Disponible au domaine</p>
+      </div>
+    </li>
+    <li class="carte ap" style="--c:var(--t-doux)">
+      <div class="carte__vis"><svg viewBox="0 0 60 220" aria-hidden="true"><use href="#b"/></svg></div>
+      <div class="carte__txt">
+        <span class="badge">Doux</span>
+        <h3><a href="#">Douceurs des Brumes</a></h3>
+        <p>Gaillac doux. <span class="todo">{{TODO_CLIENT: cépages}}</span></p>
+        <p class="dispo">Disponible au domaine</p>
+      </div>
+    </li>
+    <li class="carte ap" style="--c:var(--pierre)">
+      <div class="carte__vis"><svg viewBox="0 0 60 220" aria-hidden="true"><use href="#b"/></svg></div>
+      <div class="carte__txt">
+        <span class="badge"><span class="todo">{{TODO_CLIENT: type}}</span></span>
+        <h3><a href="#">Mathieu</a></h3>
+        <p><span class="todo">{{TODO_CLIENT: appellation, cépages}}</span></p>
+        <p class="dispo">Disponible au domaine</p>
+      </div>
+    </li>
+  </ul>
+</section>
+
+<!-- CÉPAGES -->
+<section class="grille cepages">
+  <h2 class="ap">Braucol, duras, mauzac, loin-de-l'œil. Des noms d'ici.</h2>
+  <p class="intro ap">Ces cépages sont nés dans le Gaillacois et poussent rarement ailleurs. On vous les explique sans jargon. <a class="lien" href="#">Les cépages de Gaillac</a></p>
+  <ol>
+    <li class="ap"><b>Braucol</b><span>Cépage rouge</span></li>
+    <li class="ap"><b>Duras</b><span>Cépage rouge</span></li>
+    <li class="ap"><b>Mauzac</b><span>Cépage blanc</span></li>
+    <li class="ap"><b>Loin-de-l'œil</b><span>Cépage blanc</span></li>
+  </ol>
+</section>
+
+<!-- VENIR -->
+<section class="grille venir" id="venir">
+  <div class="titre ap">
+    <p class="sur">Venir au domaine</p>
+    <h2 style="margin-top:14px">À 40 km environ de Toulouse, d'Albi et de Montauban.</h2>
+  </div>
+  <div class="bloc ap">
+    <p class="etat"><i></i>Ouvert / Fermé <span class="todo">{{TODO_CLIENT: horaires}}</span></p>
+    <address>582 route de Lapeyrière<br>81310 Lisle-sur-Tarn</address>
+    <p style="margin-top:20px">
+      <a class="tel" href="tel:+33563333722">05 63 33 37 22</a>
+      <a class="tel" href="tel:+33631856693">06 31 85 66 93</a>
+    </p>
+    <div class="boutons"><a class="btn btn--clair" href="#">Réserver</a><a class="btn" href="#">Itinéraire</a></div>
+  </div>
+  <ul class="offres ap">
+    <li><b>Dégustation et vente à la propriété</b><span>Sandra ou Karine vous présentent la gamme.</span></li>
+    <li><b>Pass Vigneron</b><span>Visite, dégustation et une bouteille offerte.</span></li>
+    <li><b>Groupes de 6 à 20 personnes</b><span>Visite sur réservation.</span></li>
+  </ul>
+</section>
+
+<!-- AGENDA -->
+<section class="grille agenda">
+  <div class="titre ap">
+    <p class="sur">Agenda</p>
+    <h2 style="margin-top:14px">Prochains rendez-vous</h2>
+    <p style="margin-top:20px"><a class="lien" href="#">Tout l'agenda</a></p>
+  </div>
+  <ul>
+    <li class="ap"><time><span class="todo">{{TODO_CLIENT: date}}</span></time><div><h3>Apéro vigneron</h3><p><span class="todo">{{TODO_CLIENT: horaire, programme}}</span></p></div><a class="lien" href="#">Ajouter au calendrier (.ics)</a></li>
+    <li class="ap"><time><span class="todo">{{TODO_CLIENT: date}}</span></time><div><h3><span class="todo">{{TODO_CLIENT: événement suivant}}</span></h3><p>Au domaine, sur réservation.</p></div><a class="lien" href="#">Ajouter au calendrier (.ics)</a></li>
+  </ul>
+</section>
+
+<!-- LETTRE -->
+<section class="grille lettre">
+  <div class="g ap">
+    <h2>Des nouvelles de la colline.</h2>
+    <p>Les dates des événements et l'arrivée des nouveaux millésimes. Quelques lettres par an, pas plus.</p>
+  </div>
+  <form class="ap" onsubmit="return false">
+    <label for="mail">Votre adresse e-mail</label>
+    <div class="champ"><input id="mail" type="email" autocomplete="email" required><button>S'inscrire</button></div>
+    <input class="pot" type="text" name="site" tabindex="-1" autocomplete="off" aria-hidden="true">
+    <p class="legal">Base légale&nbsp;: votre consentement. Désinscription en un clic dans chaque lettre. <a href="#">Confidentialité</a></p>
+  </form>
+</section>
+</main>
+
+<footer>
+  <div class="grille">
+    <div><a class="logo" href="#"><small>Domaine de</small>Long-Pech</a><p style="margin-top:14px">Sandra et Karine Bastide<br>Vigneronnes indépendantes</p></div>
+    <div><address style="font-style:normal">582 route de Lapeyrière<br>81310 Lisle-sur-Tarn<br><a href="tel:+33563333722">05 63 33 37 22</a> · <a href="tel:+33631856693">06 31 85 66 93</a></address></div>
+    <div><ul><li><a href="#">Mentions légales</a></li><li><a href="#">Confidentialité</a></li><li><a href="#">Cookies</a></li><li><a href="#">CGV</a></li></ul></div>
+  </div>
+  <p class="evin">L'abus d'alcool est dangereux pour la santé, à consommer avec modération.</p>
+</footer>
+
+<nav class="barre" aria-label="Actions rapides">
+  <a href="tel:+33563333722">Appeler</a>
+  <a href="#">Itinéraire</a>
+  <a href="#">Réserver</a>
+</nav>
+
+<script>
+document.documentElement.classList.add('js');
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vu');io.unobserve(e.target)}}),{rootMargin:'0px 0px -8% 0px'});
+document.querySelectorAll('.ap').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>

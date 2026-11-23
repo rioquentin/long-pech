@@ -1,0 +1,416 @@
+{
+  "home": {
+    "meta": {
+      "title": "Domaine de Long-Pech, vins de Gaillac à Lisle-sur-Tarn",
+      "description": "Domaine viticole familial à Lisle-sur-Tarn, mené par Sandra Bastide, quatrième génération. Vins de Gaillac rouges, blancs, doux et effervescents. Dégustation et visite au domaine."
+    },
+    "hero": {
+      "kicker": "Lisle-sur-Tarn · Vignoble de Gaillac",
+      "titleStart": "Une vigneronne, une longue colline,",
+      "titleAccent": "tous les gaillacs.",
+      "body": "Sandra Bastide cultive des coteaux argilo-calcaires, rive droite du Tarn. Rouge, rosé, blanc sec, doux, effervescent : toute la gamme se découvre à la propriété."
+    },
+    "pech": {
+      "kicker": "Pech, en occitan : la colline.",
+      "title": "Toutes les parcelles sont en coteaux.",
+      "body": "Le domaine tient sur une longue colline d'argile et de calcaire, près de la forêt de Sivens. De la crête, le regard fait le tour complet."
+    },
+    "figures": [
+      {
+        "value": "360°",
+        "label": "de panorama depuis la crête"
+      },
+      {
+        "value": "4",
+        "label": "générations de vignerons et de vigneronnes"
+      },
+      {
+        "value": "1930",
+        "label": "Victor Maurel crée le domaine"
+      }
+    ],
+    "wines": {
+      "kicker": "Nos vins",
+      "title": "Cinq styles, un seul lieu.",
+      "body": "AOP Gaillac et IGP Côtes du Tarn. Chaque couleur ci-dessous se retrouve sur les fiches et dans les filtres."
+    },
+    "grapes": {
+      "title": "Braucol, duras, mauzac, loin-de-l'œil. Des noms d'ici.",
+      "body": "Ces cépages sont nés dans le Gaillacois et poussent rarement ailleurs. On vous les explique sans jargon."
+    },
+    "visit": {
+      "kicker": "Venir au domaine",
+      "title": "À 40 km environ de Toulouse, d'Albi et de Montauban."
+    },
+    "events": {
+      "kicker": "Agenda",
+      "title": "Prochains rendez-vous"
+    },
+    "band": "Depuis 1930, quatre générations sur la même colline."
+  },
+  "domaine": {
+    "meta": {
+      "title": "Le domaine",
+      "description": "Quatre générations sur la même colline de Lisle-sur-Tarn depuis 1930. L'histoire de la famille, le terroir argilo-calcaire de Long-Pech, la certification HVE et le travail à la vigne et au chai."
+    },
+    "kicker": "Le domaine",
+    "title": "Une colline, quatre générations.",
+    "intro": "Long-Pech est une affaire de famille depuis 1930. Sandra Bastide en est la quatrième génération.",
+    "history": {
+      "title": "L'histoire de la famille",
+      "timeline": [
+        {
+          "year": "1930",
+          "text": "Victor Maurel crée le domaine."
+        },
+        {
+          "year": "{{TODO_CLIENT: année de la reprise par Marius}}",
+          "text": "Marius, son fils, prend la suite."
+        },
+        {
+          "year": "1989",
+          "text": "Colette, fille aînée de Marius, et Christian Bastide élaborent leurs premières cuvées en bouteille."
+        },
+        {
+          "year": "2005",
+          "text": "La cuvée Mathieu compte parmi les premiers rouges du domaine."
+        },
+        {
+          "year": "2008",
+          "text": "La Boussole naît d'un partenariat avec l'Association Lapérouse d'Albi."
+        },
+        {
+          "year": "Aujourd'hui",
+          "text": "Sandra Bastide, fille de Colette et Christian, mène le domaine avec son équipe."
+        }
+      ]
+    },
+    "sisters": {
+      "title": "Sandra et son équipe",
+      "body": "Sandra a grandi sur la colline. Les prénoms de la famille sont sur les étiquettes : Mathieu, Michaël, Raphaël, Jean-Gabriel.",
+      "people": [
+        {
+          "name": "Sandra Bastide",
+          "text": "Vigneronne indépendante. Elle assure le travail de la vigne, la vinification, la commercialisation et l'accueil à la propriété. Elle signe les cuvées de la gamme Les Signatures."
+        },
+        {
+          "name": "L'équipe",
+          "text": "De la taille aux vendanges, du chai au caveau. {{TODO_CLIENT: prénoms et rôles des membres de l'équipe}}"
+        }
+      ]
+    },
+    "swallows": {
+      "title": "Sous le signe des hirondelles",
+      "body": "Le chai est une ancienne bergerie. Chaque printemps, les hirondelles reviennent y nicher. Elles sont devenues l'emblème du domaine : on les retrouve sur le logo et sur chaque gamme."
+    },
+    "terroir": {
+      "title": "Le terroir",
+      "body": "Pech veut dire colline en occitan. Long-Pech, c'est la longue colline : un sol d'argile et de calcaire, des parcelles toutes en coteaux, rive droite du Tarn, entre Toulouse, Albi et Montauban.",
+      "diagramTitle": "Coupe schématique de la colline",
+      "diagram": {
+        "ridge": "La crête : le chai et la vue à 360°",
+        "slopes": "Les coteaux : toutes les parcelles",
+        "soil": "Le sol : argile et calcaire",
+        "river": "Le Tarn",
+        "exposure": "{{TODO_CLIENT: exposition de chaque versant et cépages plantés}}"
+      }
+    },
+    "work": {
+      "title": "À la vigne et au chai",
+      "blocks": [
+        {
+          "title": "À la vigne",
+          "text": "Le sol est travaillé en intégralité, dans le respect de l'environnement et de la plante. Le domaine est certifié Haute Valeur Environnementale (HVE), niveau 3."
+        },
+        {
+          "title": "Au chai",
+          "text": "Le mauzac de la méthode ancestrale et les blancs doux sont vendangés à la main. Les vins fermentent et s'élèvent en cuve ciment. Jean-Gabriel passe 12 mois en fûts de chêne de 400 litres, Mon Occimore 30 mois en fût sans ouillage."
+        }
+      ]
+    },
+    "seasons": {
+      "title": "Au fil des saisons",
+      "items": [
+        {
+          "name": "Hiver",
+          "text": "La taille, cep après cep."
+        },
+        {
+          "name": "Printemps",
+          "text": "La vigne débourre. Les hirondelles reviennent nicher au chai."
+        },
+        {
+          "name": "Été",
+          "text": "Le raisin change de couleur : c'est la véraison."
+        },
+        {
+          "name": "Automne",
+          "text": "Les vendanges. Les blancs doux sont récoltés à la main, pendant l'été indien."
+        }
+      ]
+    },
+    "cta": {
+      "title": "La colline se visite.",
+      "body": "Visite, dégustation et vente à la propriété."
+    },
+    "commitment": {
+      "title": "Cultiver aujourd'hui, préserver demain.",
+      "body": "La certification Haute Valeur Environnementale, niveau 3, porte sur l'ensemble de l'exploitation : biodiversité, protection de la vigne, fertilisation, gestion de l'eau.",
+      "note": "{{TODO_CLIENT: année d'obtention de la certification HVE et pratiques concrètes à citer (enherbement, haies, etc.)}}"
+    }
+  },
+  "vins": {
+    "meta": {
+      "title": "Nos vins de Gaillac",
+      "description": "Les treize cuvées du Domaine de Long-Pech : rouges de braucol et de duras, blancs secs et perlés, doux, méthode ancestrale. AOP Gaillac et IGP Côtes du Tarn."
+    },
+    "kicker": "Nos vins",
+    "title": "Tous les gaillacs, cuvée par cuvée.",
+    "intro": "Quatre gammes, treize cuvées. Filtrez par type, par appellation, par sucrosité ou par cépage.",
+    "note": "{{TODO_CLIENT: confirmer que la gamme compte bien ces 13 cuvées, d'après les fiches techniques}}",
+    "rangesTitle": "Quatre gammes",
+    "ranges": [
+      {
+        "key": "cuvees",
+        "tagline": "L'expression du terroir",
+        "text": "Les cépages de Gaillac en assemblage : rouges de braucol et de duras, blanc perlé, blanc doux."
+      },
+      {
+        "key": "envol",
+        "tagline": "Un cépage par cuvée",
+        "text": "Des vins en monocépage, en IGP Côtes du Tarn : sauvignon, colombard, gamay."
+      },
+      {
+        "key": "signatures",
+        "tagline": "L'empreinte de Sandra",
+        "text": "Chaque cuvée porte un prénom de la famille. Fûts de chêne, vendange tardive, élevage sous voile."
+      },
+      {
+        "key": "bulles",
+        "tagline": "La méthode ancestrale",
+        "text": "L'effervescent historique de Gaillac : un brut de mauzac et un rosé demi-sec."
+      }
+    ]
+  },
+  "cepages": {
+    "meta": {
+      "title": "Les cépages de Gaillac",
+      "description": "Braucol, duras, prunelard, mauzac, loin-de-l'œil : les cépages autochtones de Gaillac expliqués simplement, avec les cuvées du domaine où les trouver."
+    },
+    "kicker": "Comprendre",
+    "title": "Les cépages de Gaillac",
+    "intro": "Un cépage, c'est une variété de vigne. Gaillac en cultive plusieurs que l'on ne croise presque nulle part ailleurs. Voici ceux du domaine.",
+    "nativeLabel": "Cépage autochtone",
+    "colorLabels": {
+      "rouge": "Cépage rouge",
+      "blanc": "Cépage blanc",
+      "mixte": "Rouges et blancs"
+    },
+    "atDomain": "Dans les cuvées",
+    "note": "{{TODO_CLIENT: relecture de cette page par Sandra}}"
+  },
+  "visites": {
+    "meta": {
+      "title": "Visites et dégustations",
+      "description": "Dégustation au caveau, Pass Vigneron, visites de groupe de 6 à 20 personnes : venez découvrir le Domaine de Long-Pech à Lisle-sur-Tarn, dans le vignoble de Gaillac."
+    },
+    "kicker": "Visites & dégustations",
+    "title": "La colline se visite.",
+    "intro": "On vous montre les vignes, le chai, puis les vins. Choisissez la formule, nous confirmons la date.",
+    "labels": {
+      "includes": "Compris",
+      "group": "Pour qui",
+      "duration": "Durée",
+      "price": "Tarif",
+      "booking": "Réservation",
+      "choose": "Demander cette formule"
+    },
+    "formTitle": "Demander une date",
+    "formIntro": "Remplissez ce formulaire, ou appelez-nous. Nous confirmons chaque demande personnellement.",
+    "practical": {
+      "title": "À savoir",
+      "items": [
+        "{{TODO_CLIENT: langues parlées pendant la visite}}",
+        "{{TODO_CLIENT: accessibilité du caveau et du chai aux personnes à mobilité réduite}}",
+        "{{TODO_CLIENT: accueil des enfants, des chiens, des camping-cars}}"
+      ]
+    }
+  },
+  "evenements": {
+    "meta": {
+      "title": "Événements au domaine",
+      "description": "L'agenda du Domaine de Long-Pech à Lisle-sur-Tarn : apéros vignerons et soirées sur la colline. Chaque date s'ajoute à votre calendrier."
+    },
+    "kicker": "Agenda",
+    "title": "Les rendez-vous de la colline",
+    "intro": "Le chai est perché sur la crête, avec la vue sur les vignes. Les dates sont annoncées ici et dans la lettre du domaine."
+  },
+  "contact": {
+    "meta": {
+      "title": "Contact et accès",
+      "description": "Domaine de Long-Pech, 582 route de Lapeyrière, 81310 Lisle-sur-Tarn. Téléphone, itinéraires depuis Toulouse, Albi et Montauban, horaires et formulaire de contact."
+    },
+    "kicker": "Contact & accès",
+    "title": "Trouver la longue colline",
+    "intro": "Le domaine est au lieu-dit Lapeyrière, à environ 7 km de Lisle-sur-Tarn, sur le circuit des Bastides. Une question sur une cuvée, une visite à organiser, une demande professionnelle : écrivez-nous ou appelez.",
+    "labels": {
+      "address": "Adresse",
+      "phone": "Téléphone",
+      "email": "E-mail",
+      "hours": "Horaires"
+    },
+    "routesTitle": "Itinéraires",
+    "routes": [
+      {
+        "from": "Toulouse",
+        "distance": "Environ 40 km"
+      },
+      {
+        "from": "Albi",
+        "distance": "Environ 40 km"
+      },
+      {
+        "from": "Montauban",
+        "distance": "Environ 40 km"
+      }
+    ],
+    "routeCta": "Itinéraire depuis",
+    "practical": [
+      {
+        "title": "Parking",
+        "text": "{{TODO_CLIENT: stationnement sur place, nombre de places, accès autocars}}"
+      },
+      {
+        "title": "Accessibilité",
+        "text": "{{TODO_CLIENT: accès de plain-pied, sanitaires, place réservée}}"
+      }
+    ],
+    "formTitle": "Écrire au domaine"
+  },
+  "notFound": {
+    "title": "Ce rang ne mène nulle part.",
+    "body": "La page que vous cherchez n'existe pas, ou elle a changé de parcelle."
+  },
+  "legal": {
+    "mentions-legales": {
+      "title": "Mentions légales",
+      "description": "Éditeur, hébergeur et conditions d'utilisation du site du Domaine de Long-Pech.",
+      "sections": [
+        {
+          "title": "Éditeur du site",
+          "body": [
+            "Domaine de Long-Pech, 582 route de Lapeyrière, 81310 Lisle-sur-Tarn.",
+            "EARL Bastide, SIRET 432 313 708 00013. {{TODO_CLIENT: numéro de TVA intracommunautaire}}",
+            "Téléphone : 05 63 33 37 22."
+          ]
+        },
+        {
+          "title": "Direction de la publication",
+          "body": ["{{TODO_CLIENT: nom du directeur ou de la directrice de la publication}}"]
+        },
+        {
+          "title": "Hébergement",
+          "body": ["{{TODO_CLIENT: hébergeur retenu (Vercel ou Netlify), avec son adresse}}"]
+        },
+        {
+          "title": "Propriété intellectuelle",
+          "body": [
+            "Les textes, les photographies et les éléments graphiques de ce site appartiennent au Domaine de Long-Pech ou à leurs auteurs. Toute reproduction demande un accord écrit.",
+            "{{TODO_CLIENT: crédits photos}}"
+          ]
+        },
+        {
+          "title": "Vente d'alcool",
+          "body": ["La vente d'alcool aux mineurs est interdite. Ce site s'adresse aux personnes majeures."]
+        }
+      ]
+    },
+    "confidentialite": {
+      "title": "Politique de confidentialité",
+      "description": "Quelles données le site du Domaine de Long-Pech collecte, pourquoi, et comment exercer vos droits.",
+      "sections": [
+        {
+          "title": "Responsable du traitement",
+          "body": [
+            "Domaine de Long-Pech, 582 route de Lapeyrière, 81310 Lisle-sur-Tarn.",
+            "{{TODO_CLIENT: nom de la personne responsable du traitement et adresse e-mail de contact RGPD}}"
+          ]
+        },
+        {
+          "title": "Données collectées",
+          "body": [
+            "Demande de visite : nom, e-mail, téléphone si vous le donnez, date, nombre de personnes, message. Base légale : mesures prises à votre demande avant une réservation.",
+            "Formulaire de contact : nom, e-mail, message. Base légale : notre intérêt légitime à vous répondre.",
+            "Lettre d'information : adresse e-mail. Base légale : votre consentement, que vous pouvez retirer à tout moment."
+          ]
+        },
+        {
+          "title": "Durée de conservation",
+          "body": [
+            "Les demandes et les messages sont conservés 24 mois au plus. L'adresse e-mail de la lettre d'information est conservée jusqu'à votre désinscription."
+          ]
+        },
+        {
+          "title": "Destinataires",
+          "body": [
+            "Seul le domaine lit vos messages. Ils transitent par notre prestataire d'envoi d'e-mails, Resend, et par notre hébergeur. Aucune donnée n'est vendue ni cédée."
+          ]
+        },
+        {
+          "title": "Mesure d'audience",
+          "body": [
+            "Le site utilise une mesure d'audience sans cookie et sans donnée personnelle. Aucun consentement n'est requis.",
+            "{{TODO_CLIENT: outil retenu, Plausible ou Umami}}"
+          ]
+        },
+        {
+          "title": "Vos droits",
+          "body": [
+            "Vous pouvez demander l'accès à vos données, leur rectification, leur effacement, la limitation du traitement ou vous y opposer. Écrivez-nous à l'adresse ci-dessus.",
+            "Si la réponse ne vous satisfait pas, vous pouvez saisir la CNIL (cnil.fr)."
+          ]
+        }
+      ]
+    },
+    "cookies": {
+      "title": "Cookies",
+      "description": "Le site du Domaine de Long-Pech ne dépose aucun cookie de suivi.",
+      "sections": [
+        {
+          "title": "Aucun cookie de suivi",
+          "body": [
+            "Ce site ne dépose aucun cookie publicitaire ni cookie de mesure d'audience. Il n'y a donc pas de bandeau de consentement : il n'y a rien à refuser."
+          ]
+        },
+        {
+          "title": "Ce qui est mémorisé sur votre appareil",
+          "body": [
+            "Votre réponse à la vérification d'âge est enregistrée dans le stockage local de votre navigateur. Elle sert uniquement à ne pas vous reposer la question. Elle ne quitte pas votre appareil. Vous pouvez l'effacer en vidant les données du site dans votre navigateur."
+          ]
+        },
+        {
+          "title": "Carte et liens externes",
+          "body": [
+            "La carte OpenStreetMap ne se charge que si vous cliquez sur « Afficher la carte ». Les liens d'itinéraire ouvrent un service externe, qui applique sa propre politique."
+          ]
+        }
+      ]
+    },
+    "cgv": {
+      "title": "Conditions générales de vente",
+      "description": "Conditions générales de vente du Domaine de Long-Pech.",
+      "sections": [
+        {
+          "title": "Vente au domaine",
+          "body": ["Ce site ne vend pas en ligne. Les vins sont en vente à la propriété, à Lisle-sur-Tarn."]
+        },
+        {
+          "title": "Vente à distance",
+          "body": [
+            "{{TODO_CLIENT: conditions générales de vente à rédiger avant l'ouverture de la boutique en ligne (prix TTC, livraison, rétractation, interdiction de vente aux mineurs)}}"
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,56 @@
+[
+  {
+    "slug": "braucol",
+    "name": "Braucol",
+    "color": "rouge",
+    "native": true,
+    "aka": "Aussi appelé fer servadou.",
+    "summary": "Le rouge emblématique de Gaillac. Il donne des vins colorés, aux arômes de cassis et aux notes poivrées.",
+    "atDomain": ["jean-gabriel-rouge", "la-boussole", "mathieu"]
+  },
+  {
+    "slug": "duras",
+    "name": "Duras",
+    "color": "rouge",
+    "native": true,
+    "aka": "Un des plus anciens cépages du Gaillacois.",
+    "summary": "Il apporte de la finesse et une signature poivrée. On l'assemble le plus souvent avec le braucol.",
+    "atDomain": ["jean-gabriel-rouge", "la-boussole", "mathieu", "miss-pink"]
+  },
+  {
+    "slug": "prunelard",
+    "name": "Prunelard",
+    "color": "rouge",
+    "native": true,
+    "aka": "Un vieux cépage gaillacois, replanté depuis quelques décennies.",
+    "summary": "Peu répandu, il entre en petite proportion dans les assemblages de rouges.",
+    "atDomain": ["jean-gabriel-rouge", "la-boussole"]
+  },
+  {
+    "slug": "mauzac",
+    "name": "Mauzac",
+    "color": "blanc",
+    "native": true,
+    "aka": "Le cépage de la méthode ancestrale gaillacoise.",
+    "summary": "Reconnaissable à ses arômes de pomme et de poire. Il se décline en blanc sec, en doux et en effervescent.",
+    "atDomain": ["raphael", "methode-ancestrale-brut", "fraicheur-perle", "douceurs-des-brumes"]
+  },
+  {
+    "slug": "loin-de-l-oeil",
+    "name": "Loin-de-l'œil",
+    "color": "blanc",
+    "native": true,
+    "aka": "« Len de l'el » en occitan.",
+    "summary": "Sa grappe pousse au bout d'un long pédoncule, loin du bourgeon, que les vignerons appellent l'œil. Il se prête bien aux vins doux.",
+    "atDomain": ["douceurs-des-brumes", "michael-vendange-tardive", "occimore", "fraicheur-perle"]
+  },
+  {
+    "slug": "autres",
+    "name": "Et aussi",
+    "color": "mixte",
+    "native": false,
+    "aka": "Syrah, merlot, gamay, sauvignon, colombard.",
+    "summary": "Des cépages plus connus, vinifiés seuls dans la gamme L'Envol des Hirondelles ou en complément dans les assemblages.",
+    "atDomain": ["envol-sauvignon", "envol-colombard", "envol-rose-gamay"]
+  }
+]

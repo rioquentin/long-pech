@@ -1,0 +1,36 @@
+{
+  "name": "Domaine de Long-Pech",
+  "shortName": "Long-Pech",
+  "owners": "Sandra Bastide",
+  "tagline": "Une vigneronne, une longue colline, tous les gaillacs.",
+  "description": "Domaine viticole familial à Lisle-sur-Tarn, dans le vignoble de Gaillac, mené par Sandra Bastide. Dégustation, visite et vente à la propriété.",
+  "address": {
+    "street": "582 route de Lapeyrière",
+    "postalCode": "81310",
+    "city": "Lisle-sur-Tarn",
+    "region": "Occitanie",
+    "country": "FR"
+  },
+  "geo": null,
+  "phones": [
+    {
+      "label": "Fixe",
+      "display": "05 63 33 37 22",
+      "tel": "+33563333722"
+    },
+    {
+      "label": "Mobile",
+      "display": "06 31 85 66 93",
+      "tel": "+33631856693"
+    }
+  ],
+  "email": "longpech81@gmail.com",
+  "hours": null,
+  "hoursNote": "{{TODO_CLIENT: horaires d'ouverture du caveau, jour par jour}}",
+  "socials": [],
+  "legal": {
+    "publisher": "EARL Bastide, SIRET 432 313 708 00013. {{TODO_CLIENT: numéro de TVA intracommunautaire}}",
+    "publicationDirector": "{{TODO_CLIENT: nom du directeur ou de la directrice de la publication}}",
+    "host": "{{TODO_CLIENT: hébergeur retenu (Vercel ou Netlify), avec adresse}}"
+  }
+}

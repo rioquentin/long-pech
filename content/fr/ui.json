@@ -1,0 +1,221 @@
+{
+  "skip": "Aller au contenu",
+  "logoPrefix": "Domaine de",
+  "nav": [
+    {
+      "href": "/domaine",
+      "label": "Le domaine"
+    },
+    {
+      "href": "/vins",
+      "label": "Nos vins"
+    },
+    {
+      "href": "/visites",
+      "label": "Visites & dégustations"
+    },
+    {
+      "href": "/evenements",
+      "label": "Événements"
+    },
+    {
+      "href": "/contact",
+      "label": "Contact & accès"
+    }
+  ],
+  "navLabel": "Navigation principale",
+  "menu": {
+    "open": "Menu",
+    "close": "Fermer"
+  },
+  "home": "Accueil",
+  "breadcrumb": "Fil d'Ariane",
+  "cta": {
+    "book": "Réserver une visite",
+    "bookShort": "Réserver",
+    "call": "Appeler",
+    "directions": "Itinéraire",
+    "allWines": "Toutes les cuvées",
+    "seeWines": "Voir les cuvées",
+    "seeWine": "Voir la fiche",
+    "discover": "Découvrir le domaine",
+    "grapes": "Les cépages de Gaillac",
+    "agenda": "Tout l'agenda",
+    "visits": "Visites & dégustations"
+  },
+  "mobileBar": "Actions rapides",
+  "evin": "L'abus d'alcool est dangereux pour la santé, à consommer avec modération.",
+  "photoPlaceholder": "Emplacement photo",
+  "todoHidden": "Information à venir",
+  "types": {
+    "rouge": "Rouge",
+    "rose": "Rosé",
+    "blanc": "Blanc",
+    "doux": "Doux",
+    "effervescent": "Effervescent"
+  },
+  "typesLegend": "Types de vin",
+  "sweetness": {
+    "brut": "Brut",
+    "sec": "Sec",
+    "demi-sec": "Demi-sec",
+    "doux": "Doux"
+  },
+  "ranges": {
+    "signatures": "Les Signatures",
+    "cuvees": "Les Cuvées",
+    "bulles": "Les Bulles",
+    "envol": "L'Envol des Hirondelles"
+  },
+  "wine": {
+    "atDomain": "Disponible au domaine",
+    "priceTtc": "TTC",
+    "buy": "Commander",
+    "outOfStock": "Épuisé",
+    "vintage": "Millésime",
+    "vintageTodo": "{{TODO_CLIENT: millésime en vente}}",
+    "appellation": "Appellation",
+    "appellationTodo": "{{TODO_CLIENT: appellation ou mention}}",
+    "range": "Gamme",
+    "grapes": "Cépages",
+    "sweetness": "Sucrosité",
+    "volume": "Contenance",
+    "abv": "Degré",
+    "abvTodo": "{{TODO_CLIENT: degré d'alcool}}",
+    "serving": "Température de service",
+    "cellaring": "Potentiel de garde",
+    "cellaringTodo": "{{TODO_CLIENT: potentiel de garde}}",
+    "terroir": "Terroir",
+    "terroirValue": "Argilo-calcaire, en coteaux",
+    "making": "Vinification et élevage",
+    "makingTodo": "{{TODO_CLIENT: vinification et élevage de cette cuvée}}",
+    "tasting": "Dégustation",
+    "tastingTodo": "{{TODO_CLIENT: notes de dégustation}}",
+    "eye": "Œil",
+    "nose": "Nez",
+    "palate": "Bouche",
+    "pairings": "Accords mets et vins",
+    "awards": "Distinctions",
+    "techSheet": "Fiche technique (PDF)",
+    "techSheetTodo": "{{TODO_CLIENT: fiche technique PDF de la cuvée}}",
+    "others": "Dans la même gamme",
+    "visitTitle": "Cette cuvée se découvre au domaine.",
+    "visitBody": "Dégustation et vente à la propriété, à Lisle-sur-Tarn.",
+    "bottleAlt": "Bouteille de la cuvée",
+    "vineAge": "Âge des vignes",
+    "vineAgeUnit": "ans",
+    "residualSugar": "Sucre résiduel",
+    "culture": "Culture",
+    "cultureValue": "Haute Valeur Environnementale, niveau 3"
+  },
+  "filters": {
+    "title": "Filtrer les cuvées",
+    "type": "Type",
+    "appellation": "Appellation",
+    "sweetness": "Sucrosité",
+    "grape": "Cépage",
+    "all": "Tous",
+    "allF": "Toutes",
+    "reset": "Effacer les filtres",
+    "countOne": "cuvée",
+    "countMany": "cuvées",
+    "empty": "Aucune cuvée ne correspond à ces filtres."
+  },
+  "status": {
+    "open": "Ouvert",
+    "closed": "Fermé",
+    "until": "jusqu'à",
+    "reopens": "Ouvre à",
+    "today": "Aujourd'hui"
+  },
+  "days": ["Dimanche", "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi"],
+  "closedDay": "Fermé",
+  "event": {
+    "ics": "Ajouter au calendrier (.ics)",
+    "icsPending": "Calendrier disponible dès que la date est fixée",
+    "empty": "Les prochaines dates arrivent. La lettre du domaine les annonce en premier."
+  },
+  "newsletter": {
+    "title": "Des nouvelles de la colline.",
+    "body": "Les dates des événements et l'arrivée des nouveaux millésimes. Trois ou quatre lettres par an, pas plus.",
+    "label": "Votre adresse e-mail",
+    "submit": "S'inscrire",
+    "legal": "Base légale : votre consentement (RGPD, art. 6.1.a). Désinscription en un clic dans chaque lettre.",
+    "privacy": "Confidentialité",
+    "success": "C'est noté. Vous recevrez la prochaine lettre du domaine.",
+    "error": "L'inscription n'a pas pu être enregistrée. Vérifiez l'adresse, ou appelez-nous.",
+    "demo": "L'inscription est désactivée sur cette version de démonstration."
+  },
+  "form": {
+    "required": "obligatoire",
+    "optional": "facultatif",
+    "name": "Nom et prénom",
+    "email": "E-mail",
+    "phone": "Téléphone",
+    "date": "Date souhaitée",
+    "people": "Nombre de personnes",
+    "offer": "Type de visite",
+    "message": "Message",
+    "messageHint": "Une précision utile : langue, accessibilité, occasion.",
+    "sendBooking": "Envoyer la demande",
+    "sendContact": "Envoyer le message",
+    "sending": "Envoi en cours…",
+    "honeypot": "Ne pas remplir ce champ",
+    "bookingLegal": "Base légale : mesures prises à votre demande avant une réservation (RGPD, art. 6.1.b). Vos données servent uniquement à vous répondre et sont supprimées après 24 mois.",
+    "contactLegal": "Base légale : notre intérêt légitime à répondre à votre message (RGPD, art. 6.1.f). Vos données servent uniquement à vous répondre.",
+    "bookingSuccessTitle": "Demande envoyée.",
+    "bookingSuccess": "Ce n'est pas encore une réservation. Le domaine vous confirme la date par e-mail ou par téléphone.",
+    "contactSuccessTitle": "Message envoyé.",
+    "contactSuccess": "Nous vous répondons dès que possible. Pour une question urgente, le téléphone reste le plus sûr.",
+    "errorTitle": "Le formulaire contient des erreurs.",
+    "sendError": "L'envoi a échoué. Réessayez dans un instant, ou appelez-nous.",
+    "errors": {
+      "name": "Indiquez votre nom.",
+      "email": "Indiquez une adresse e-mail valide.",
+      "date": "Choisissez une date à venir.",
+      "people": "Indiquez un nombre de personnes entre 1 et 20.",
+      "offer": "Choisissez un type de visite.",
+      "message": "Écrivez votre message."
+    },
+    "demoNotice": "Les formulaires sont désactivés sur cette version de démonstration. Appelez le domaine ou écrivez-lui directement."
+  },
+  "ageGate": {
+    "title": "Avez-vous 18 ans ou plus ?",
+    "body": "Ce site présente des vins. Il est réservé aux personnes majeures.",
+    "yes": "Oui, j'ai 18 ans ou plus",
+    "no": "Non",
+    "note": "Votre réponse est mémorisée sur cet appareil, sans cookie de suivi.",
+    "deniedTitle": "Ce site est réservé aux personnes majeures.",
+    "denied": "Vous pourrez le consulter à partir de 18 ans.",
+    "back": "Je me suis trompé"
+  },
+  "map": {
+    "load": "Afficher la carte",
+    "notice": "La carte est fournie par OpenStreetMap. Elle ne se charge qu'à votre demande.",
+    "title": "Carte OpenStreetMap du domaine",
+    "todo": "{{TODO_CLIENT: coordonnées GPS exactes du caveau, pour la carte}}"
+  },
+  "footer": {
+    "independent": "Vigneronne indépendante",
+    "legalLinks": [
+      {
+        "href": "/mentions-legales",
+        "label": "Mentions légales"
+      },
+      {
+        "href": "/confidentialite",
+        "label": "Confidentialité"
+      },
+      {
+        "href": "/cookies",
+        "label": "Cookies"
+      },
+      {
+        "href": "/cgv",
+        "label": "CGV"
+      }
+    ],
+    "legalNav": "Informations légales"
+  },
+  "logoAlt": "Domaine de Long-Pech, Gaillac"
+}

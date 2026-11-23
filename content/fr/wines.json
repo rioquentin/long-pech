@@ -1,0 +1,619 @@
+[
+  {
+    "slug": "jean-gabriel-rouge",
+    "name": "Jean-Gabriel",
+    "range": "signatures",
+    "type": "rouge",
+    "appellation": "AOP Gaillac",
+    "featured": true,
+    "grapes": [
+      {
+        "name": "Braucol"
+      },
+      {
+        "name": "Duras"
+      },
+      {
+        "name": "Syrah"
+      },
+      {
+        "name": "Prunelard"
+      }
+    ],
+    "story": "Jean et Gabriel sont les aïeux vignerons de la famille Bastide. Ce rouge vinifié et élevé en fût porte leurs deux prénoms. Il existe aussi en magnum, en caisse bois.",
+    "vinification": "Vendanges intégrales. Fermentation en fûts de chêne de 400 litres.",
+    "ageing": "12 mois dans les mêmes barriques.",
+    "servingTemp": "16 °C",
+    "tastingNotes": {
+      "eye": "Robe rouge grenat.",
+      "nose": "Fruits rouges mûrs, cacao, vanille, fumée.",
+      "palate": "Bouche ample : cassis, pruneau, cerise. Épices soutenues, de la fraîcheur, tanins soyeux."
+    },
+    "pairings": ["Côte de bœuf à la braise", "Gibier", "Cassoulet", "Fromages", "Charcuteries artisanales"],
+    "awards": [
+      {
+        "name": "Médaille de bronze, concours de Mâcon",
+        "source": "Fiche technique du domaine",
+        "verified": true
+      },
+      {
+        "name": "Coup de cœur, Guide Hachette",
+        "source": "Ancien site long-pech.fr"
+      },
+      {
+        "name": "Médaille d'or, Féminalise",
+        "source": "Ancien site long-pech.fr"
+      },
+      {
+        "name": "Médaille d'or, Mâcon",
+        "source": "Ancien site long-pech.fr"
+      },
+      {
+        "name": "Médaille d'argent, Terre de Vins",
+        "source": "Ancien site long-pech.fr"
+      },
+      {
+        "name": "Cité au guide Dussert-Gerber",
+        "source": "Ancien site long-pech.fr"
+      }
+    ],
+    "vintage": 2019,
+    "abv": 13.5,
+    "vineAge": 35,
+    "cellaring": "10 ans",
+    "sku": "3760085380394",
+    "techSheetPdf": "/fiches/jean-gabriel-rouge.pdf",
+    "images": [
+      {
+        "src": "/photos/bouteilles/jean-gabriel-rouge.jpg",
+        "alt": "Bouteille de Jean-Gabriel"
+      }
+    ]
+  },
+  {
+    "slug": "michael-vendange-tardive",
+    "name": "Michaël",
+    "range": "signatures",
+    "type": "doux",
+    "sweetness": "doux",
+    "appellation": "AOP Gaillac",
+    "grapes": [
+      {
+        "name": "Loin-de-l'œil"
+      },
+      {
+        "name": "Mauzac"
+      }
+    ],
+    "story": "Michaël est le fils cadet de Sandra. Sa cuvée est une vendange tardive de loin-de-l'œil et de mauzac.",
+    "vinification": "Vendanges manuelles avec tri sélectif. Fermentation pour moitié en demi-muids, pour moitié en cuve.",
+    "ageing": "18 mois avant la commercialisation.",
+    "servingTemp": "8 °C",
+    "tastingNotes": {
+      "eye": "Robe jaune dorée aux reflets ambrés.",
+      "nose": "Pâte de fruits confite, notes toastées.",
+      "palate": "Ample : raisin et fruits confits, pâte de coing, pêche, relevés de miel, d'épices, de vanille et de badiane. Finale très persistante."
+    },
+    "pairings": ["Fromages à pâte persillée", "Tarte Tatin", "Pâtisseries au chocolat"],
+    "awards": [
+      {
+        "name": "Médaille d'or, Concours des vins de Gaillac",
+        "source": "Ancien site long-pech.fr"
+      },
+      {
+        "name": "Médaille d'or, Terre de Vins",
+        "source": "Ancien site long-pech.fr"
+      }
+    ],
+    "images": [
+      {
+        "src": "/photos/bouteilles/michael-vendange-tardive.jpg",
+        "alt": "Bouteille de Michaël"
+      }
+    ],
+    "vintage": 2019,
+    "abv": 12,
+    "residualSugar": 132,
+    "vineAge": 35,
+    "cellaring": "10 à 15 ans",
+    "sku": "3760085380042",
+    "techSheetPdf": "/fiches/michael-vendange-tardive.pdf"
+  },
+  {
+    "slug": "occimore",
+    "name": "Mon Occimore",
+    "range": "signatures",
+    "type": "doux",
+    "sweetness": "doux",
+    "appellation": "AOP Gaillac",
+    "vintage": 1997,
+    "volumeMl": 500,
+    "grapes": [
+      {
+        "name": "Mauzac"
+      },
+      {
+        "name": "Loin-de-l'œil"
+      }
+    ],
+    "story": "Un blanc doux élevé sous voile, en fût et sans ouillage. Il est présenté en caisse bois individuelle.",
+    "vinification": "Vendanges manuelles. Vin fermenté en fût de chêne.",
+    "ageing": "30 mois en fût de chêne, sans ouillage (vin blanc doux de voile).",
+    "servingTemp": "8 °C",
+    "tastingNotes": {
+      "eye": "Robe ambrée, tuilée.",
+      "nose": "Note oxydative, épices douces, écorce d'orange.",
+      "palate": "Fruits confits, caramel et épices, enveloppés de notes fumées apportées par l'élevage en bois."
+    },
+    "pairings": ["Foie gras", "Tataki de thon aux agrumes", "Poire Belle-Hélène", "Chocolat"],
+    "images": [
+      {
+        "src": "/photos/bouteilles/occimore.jpg",
+        "alt": "Bouteille de Mon Occimore"
+      }
+    ],
+    "abv": 13,
+    "residualSugar": 60,
+    "vineAge": 30,
+    "cellaring": "Plus de 15 ans",
+    "sku": "3760085380455",
+    "techSheetPdf": "/fiches/occimore.pdf"
+  },
+  {
+    "slug": "raphael",
+    "name": "Raphaël",
+    "range": "signatures",
+    "type": "blanc",
+    "sweetness": "sec",
+    "appellation": "AOP Gaillac",
+    "grapes": [
+      {
+        "name": "Mauzac",
+        "percent": 100
+      }
+    ],
+    "story": "Raphaël est le filleul de Sandra. Un blanc sec issu du seul mauzac.",
+    "tastingNotes": {
+      "eye": "Robe jaune clair.",
+      "nose": "Fleurs blanches, fruits, pomme acidulée légèrement grillée.",
+      "palate": "Attaque franche, belle rondeur."
+    },
+    "pairings": ["Crustacés", "Poisson", "Tarte aux poireaux", "Fromages"],
+    "awards": [
+      {
+        "name": "Deux étoiles, Guide Hachette",
+        "year": 2021,
+        "source": "Ancien site long-pech.fr (millésime 2019)"
+      },
+      {
+        "name": "Médaille d'or, Gilbert & Gaillard",
+        "year": 2020,
+        "source": "Ancien site long-pech.fr (millésime 2019)"
+      },
+      {
+        "name": "Médaille de bronze, Concours des Vignerons Indépendants",
+        "year": 2020,
+        "source": "Ancien site long-pech.fr (millésime 2019)"
+      }
+    ],
+    "images": [
+      {
+        "src": "/photos/bouteilles/raphael.jpg",
+        "alt": "Bouteille de Raphaël"
+      }
+    ],
+    "vintage": 2022,
+    "abv": 13,
+    "residualSugar": 0,
+    "vineAge": 15,
+    "vinification": "Vendanges mécaniques, pressurage soigné, fermentation en cuve ciment. {{TODO_CLIENT: préciser l'assemblage, la fiche indique 20 % de vin élevé 4 à 5 mois en cuve ciment}}",
+    "ageing": "En barriques de 500 litres.",
+    "servingTemp": "8 °C",
+    "cellaring": "4 à 5 ans",
+    "sku": "3760085380172",
+    "techSheetPdf": "/fiches/raphael.pdf"
+  },
+  {
+    "slug": "la-boussole",
+    "name": "La Boussole",
+    "range": "cuvees",
+    "type": "rouge",
+    "appellation": "AOP Gaillac",
+    "grapes": [
+      {
+        "name": "Braucol"
+      },
+      {
+        "name": "Duras"
+      },
+      {
+        "name": "Syrah"
+      },
+      {
+        "name": "Prunelard"
+      }
+    ],
+    "story": "Créée en 2008 avec l'Association Lapérouse d'Albi, en hommage à l'explorateur La Pérouse. Elle porte le nom de son navire.",
+    "vinification": "Vendanges mécaniques, égrappage, macération post-fermentaire sous marc.",
+    "servingTemp": "16 °C",
+    "tastingNotes": {
+      "eye": "Robe rouge intense.",
+      "nose": "Épices et fruits rouges.",
+      "palate": "Bouche franche, tanins puissants et veloutés. Poivre et cassis, pointe de violette apportée par la syrah."
+    },
+    "pairings": [
+      "Charcuteries artisanales",
+      "Magret ou confit de canard",
+      "Viandes grillées ou mijotées",
+      "Fromages affinés"
+    ],
+    "vintage": 2022,
+    "abv": 13,
+    "residualSugar": 0,
+    "vineAge": 35,
+    "ageing": "Vinification et élevage en cuve ciment.",
+    "cellaring": "5 ans",
+    "sku": "3760085380332",
+    "techSheetPdf": "/fiches/la-boussole.pdf",
+    "images": [
+      {
+        "src": "/photos/bouteilles/la-boussole.jpg",
+        "alt": "Bouteille de La Boussole"
+      }
+    ],
+    "awards": [
+      {
+        "name": "Médaille d'or, concours Féminalise de Beaune",
+        "year": 2024,
+        "source": "Fiche technique du domaine",
+        "verified": true
+      }
+    ]
+  },
+  {
+    "slug": "mathieu",
+    "name": "Mathieu",
+    "range": "cuvees",
+    "type": "rouge",
+    "appellation": "AOP Gaillac",
+    "grapes": [
+      {
+        "name": "Braucol"
+      },
+      {
+        "name": "Syrah"
+      },
+      {
+        "name": "Duras"
+      },
+      {
+        "name": "Merlot"
+      }
+    ],
+    "story": "Mathieu est le fils aîné de Sandra. Sa cuvée compte parmi les premiers rouges du domaine, en 2005. Elle existe aussi en magnum.",
+    "vinification": "Récolte mécanique, égrappée. Fermentation alcoolique en cuve, avec plusieurs techniques d'extraction de la couleur et des arômes.",
+    "servingTemp": "16 °C",
+    "tastingNotes": {
+      "eye": "Robe rouge intense aux reflets violets.",
+      "nose": "Nez franc, fruits et épices.",
+      "palate": "Tanins soyeux, baie de cassis et poivre gris."
+    },
+    "pairings": ["Charcuterie", "Viande rouge", "Cassoulet", "Magret de canard", "Fromages"],
+    "awards": [
+      {
+        "name": "Médaille d'or, Féminalise",
+        "year": 2020,
+        "source": "Ancien site long-pech.fr (millésime 2018)"
+      },
+      {
+        "name": "Médaille d'or, Gilbert & Gaillard",
+        "year": 2020,
+        "source": "Ancien site long-pech.fr (millésime 2018)"
+      }
+    ],
+    "images": [
+      {
+        "src": "/photos/bouteilles/mathieu.jpg",
+        "alt": "Bouteille de Mathieu"
+      }
+    ],
+    "vintage": 2022,
+    "abv": 12.5,
+    "residualSugar": 0,
+    "vineAge": 25,
+    "ageing": "En cuve avant la mise en bouteille.",
+    "cellaring": "10 ans",
+    "sku": "3760085380325",
+    "techSheetPdf": "/fiches/mathieu.pdf"
+  },
+  {
+    "slug": "fraicheur-perle",
+    "name": "Fraîcheur Perlé",
+    "range": "cuvees",
+    "type": "blanc",
+    "sweetness": "sec",
+    "appellation": "AOP Gaillac",
+    "featured": true,
+    "grapes": [
+      {
+        "name": "Loin-de-l'œil"
+      },
+      {
+        "name": "Sauvignon"
+      },
+      {
+        "name": "Mauzac"
+      }
+    ],
+    "story": "Le perlé est né à Gaillac en 1957. Cette cuvée a été le produit phare du domaine dans les années 1980.",
+    "vinification": "Récolte mécanique, pressurage soigné, fermentation alcoolique maîtrisée.",
+    "ageing": "Sur lies fines.",
+    "servingTemp": "8 °C",
+    "tastingNotes": {
+      "eye": "Robe jaune pâle.",
+      "nose": "Fleur d'acacia, pêche, abricot, pomme.",
+      "palate": "Perles très fines, notes florales."
+    },
+    "pairings": ["Cuisine du monde", "Fromages de chèvre"],
+    "vintage": 2022,
+    "abv": 12.5,
+    "residualSugar": 0,
+    "vineAge": 25,
+    "cellaring": "3 à 5 ans",
+    "sku": "3760085380110",
+    "techSheetPdf": "/fiches/fraicheur-perle.pdf"
+  },
+  {
+    "slug": "douceurs-des-brumes",
+    "name": "Douceurs des Brumes",
+    "range": "cuvees",
+    "type": "doux",
+    "sweetness": "doux",
+    "appellation": "AOP Gaillac",
+    "featured": true,
+    "grapes": [
+      {
+        "name": "Loin-de-l'œil"
+      },
+      {
+        "name": "Mauzac"
+      }
+    ],
+    "story": "Un nom imaginé par Colette. Le raisin blanc, doré, est récolté à la main pendant l'été indien.",
+    "vinification": "Récolte manuelle, pressurage soigné, fermentation alcoolique maîtrisée par le froid.",
+    "servingTemp": "8 °C",
+    "tastingNotes": {
+      "eye": "Robe jaune or.",
+      "nose": "Fruits à croquer : pêche, poire.",
+      "palate": "Attaque ronde et enveloppante. Abricot, pêche, poire, pâte de coing. Jolie persistance."
+    },
+    "pairings": ["Foie gras", "Pâtisseries aux fruits ou à la crème", "Chocolat noir"],
+    "images": [
+      {
+        "src": "/photos/bouteilles/douceurs-des-brumes.jpg",
+        "alt": "Bouteille de Douceurs des Brumes"
+      }
+    ],
+    "vintage": 2022,
+    "abv": 12.5,
+    "residualSugar": 87,
+    "vineAge": 30,
+    "ageing": "En cuve ciment avant la mise en bouteille.",
+    "cellaring": "10 ans",
+    "sku": "3760085380196",
+    "techSheetPdf": "/fiches/douceurs-des-brumes.pdf"
+  },
+  {
+    "slug": "methode-ancestrale-brut",
+    "name": "Méthode Ancestrale Brut",
+    "range": "bulles",
+    "type": "effervescent",
+    "sweetness": "brut",
+    "appellation": "AOP Gaillac",
+    "featured": true,
+    "grapes": [
+      {
+        "name": "Mauzac",
+        "percent": 100
+      }
+    ],
+    "story": "La méthode effervescente historique de Gaillac. Un seul cépage : le mauzac.",
+    "vinification": "Récolte manuelle en cagettes, pressurage soigné. Première fermentation en cuve au domaine, arrêtée par le froid. Prise de mousse en cave coopérative, puis dégorgement quand l'équilibre est atteint.",
+    "servingTemp": "4 °C",
+    "tastingNotes": {
+      "eye": "Robe jaune pâle, perles fines.",
+      "nose": "Frais, pomme verte.",
+      "palate": "Mousse fine. Équilibre entre acidité et alcool, pointe de sucrosité, pomme Granny Smith."
+    },
+    "pairings": ["Desserts", "Risotto au roquefort"],
+    "awards": [
+      {
+        "name": "Médaille d'or, Gilbert & Gaillard",
+        "year": 2020,
+        "source": "Ancien site long-pech.fr"
+      }
+    ],
+    "images": [
+      {
+        "src": "/photos/bouteilles/methode-ancestrale-brut.jpg",
+        "alt": "Bouteille de Méthode Ancestrale Brut"
+      }
+    ],
+    "vintage": 2024,
+    "abv": 11,
+    "residualSugar": 7,
+    "vineAge": 20,
+    "cellaring": "2 à 3 ans",
+    "sku": "3760085380356",
+    "techSheetPdf": "/fiches/methode-ancestrale-brut.pdf"
+  },
+  {
+    "slug": "miss-pink",
+    "name": "Miss Pink",
+    "range": "bulles",
+    "type": "effervescent",
+    "sweetness": "demi-sec",
+    "grapes": [
+      {
+        "name": "Gamay"
+      },
+      {
+        "name": "Syrah"
+      },
+      {
+        "name": "Duras"
+      }
+    ],
+    "story": "Des bulles rosées en demi-sec, élaborées selon la méthode ancestrale.",
+    "vinification": "Récolte mécanique, pressurage soigné. Première fermentation en cuve au domaine, arrêtée par le froid. Prise de mousse en cave coopérative, puis dégorgement quand l'équilibre est atteint.",
+    "servingTemp": "4 °C",
+    "tastingNotes": {
+      "eye": "Robe rose.",
+      "nose": "Arômes acidulés de fraise et de framboise.",
+      "palate": "Notes de bonbons acidulés."
+    },
+    "pairings": ["Pâtisseries", "Salade de fruits rouges"],
+    "images": [
+      {
+        "src": "/photos/bouteilles/miss-pink.jpg",
+        "alt": "Bouteille de Miss Pink"
+      }
+    ],
+    "abv": 11.5,
+    "residualSugar": 18,
+    "vineAge": 25,
+    "appellation": null,
+    "cellaring": "2 à 3 ans",
+    "sku": "3760085380578",
+    "techSheetPdf": "/fiches/miss-pink.pdf"
+  },
+  {
+    "slug": "envol-sauvignon",
+    "name": "L'Envol des Hirondelles Sauvignon",
+    "range": "envol",
+    "type": "blanc",
+    "sweetness": "sec",
+    "appellation": "IGP Côtes du Tarn",
+    "grapes": [
+      {
+        "name": "Sauvignon",
+        "percent": 100
+      }
+    ],
+    "vinification": "Récolte mécanique, pressurage soigné, fermentation alcoolique en cuve ciment.",
+    "ageing": "Sur lies fines.",
+    "servingTemp": "6 à 8 °C",
+    "tastingNotes": {
+      "eye": "Robe jaune.",
+      "nose": "Fruits exotiques, litchi, mangue.",
+      "palate": "Vif et léger. Fraîcheur acidulée, fruit de la passion, ananas, litchi."
+    },
+    "pairings": [
+      "Poissons",
+      "Cuisine asiatique",
+      "Asperges",
+      "Viandes blanches",
+      "Salade périgourdine",
+      "Fromage de chèvre"
+    ],
+    "images": [
+      {
+        "src": "/photos/bouteilles/envol-sauvignon.jpg",
+        "alt": "Bouteille de L'Envol des Hirondelles Sauvignon"
+      }
+    ],
+    "vintage": 2022,
+    "abv": 12.5,
+    "residualSugar": 0,
+    "vineAge": 20,
+    "cellaring": "3 à 4 ans",
+    "sku": "3760085380639",
+    "techSheetPdf": "/fiches/envol-sauvignon.pdf"
+  },
+  {
+    "slug": "envol-colombard",
+    "name": "L'Envol des Hirondelles Colombard",
+    "range": "envol",
+    "type": "blanc",
+    "sweetness": "demi-sec",
+    "appellation": "IGP Côtes du Tarn",
+    "grapes": [
+      {
+        "name": "Colombard",
+        "percent": 100
+      }
+    ],
+    "vinification": "Pas d'élevage sur lies fines.",
+    "ageing": "En cuve avant la mise en bouteille.",
+    "servingTemp": "6 à 8 °C",
+    "tastingNotes": {
+      "eye": "Robe jaune pâle.",
+      "nose": "Acidulé : agrumes, pamplemousse rose.",
+      "palate": "Fraîcheur des agrumes et douceur naturelle du raisin."
+    },
+    "pairings": ["Foie gras", "Poissons", "Cuisine asiatique", "Fromages affinés"],
+    "vintage": 2023,
+    "abv": 10.5,
+    "residualSugar": 18.5,
+    "vineAge": 15,
+    "cellaring": "3 à 4 ans",
+    "sku": "3760085380653",
+    "techSheetPdf": "/fiches/envol-colombard.pdf",
+    "images": [
+      {
+        "src": "/photos/bouteilles/envol-colombard.jpg",
+        "alt": "Bouteille de L'Envol des Hirondelles Colombard"
+      }
+    ]
+  },
+  {
+    "slug": "envol-rose-gamay",
+    "name": "L'Envol des Hirondelles Rosé",
+    "range": "envol",
+    "type": "rose",
+    "appellation": "IGP Côtes du Tarn",
+    "grapes": [
+      {
+        "name": "Gamay",
+        "percent": 100
+      }
+    ],
+    "vinification": "Récolte mécanique, rosé de pressurage, fermentation en cuve ciment.",
+    "servingTemp": "6 à 8 °C",
+    "tastingNotes": {
+      "eye": "Robe rose saumon.",
+      "nose": "Fraise écrasée, framboise.",
+      "palate": "Attaque franche sur les fruits rouges. De la fraîcheur, équilibrée par une fine touche de sucrosité."
+    },
+    "pairings": [
+      "Grillades",
+      "Charcuteries",
+      "Cuisine méditerranéenne",
+      "Cuisine orientale",
+      "Viandes blanches",
+      "Fromages"
+    ],
+    "awards": [
+      {
+        "name": "Une étoile, Guide Hachette",
+        "year": 2021,
+        "source": "Ancien site long-pech.fr (millésime 2019)"
+      }
+    ],
+    "images": [
+      {
+        "src": "/photos/bouteilles/envol-rose-gamay.jpg",
+        "alt": "Bouteille de L'Envol des Hirondelles Rosé"
+      }
+    ],
+    "vintage": 2023,
+    "abv": 12.5,
+    "residualSugar": 3,
+    "vineAge": 25,
+    "sweetness": "sec",
+    "ageing": "En cuve avant la mise en bouteille.",
+    "cellaring": "2 ans",
+    "sku": "3760085380615",
+    "techSheetPdf": "/fiches/envol-rose-gamay.pdf"
+  }
+]

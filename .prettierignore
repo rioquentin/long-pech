@@ -1,0 +1,10 @@
+node_modules
+.next
+archive
+maquette
+pnpm-lock.yaml
+docs/lighthouse
+docs/captures
+test-results
+playwright-report
+out
